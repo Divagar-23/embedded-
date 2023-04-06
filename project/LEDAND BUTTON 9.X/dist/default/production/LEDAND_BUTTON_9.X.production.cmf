@@ -1,0 +1,504 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\LEDAND_BUTTON_9.X.production.o
+cinit CODE 0 7FC 7FC 4 2
+maintext CODE 0 46A 46A 392 2
+cstackBANK0 BANK0 1 20 20 10 1
+$C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+end_init CODE 0 0 0 3 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 30-6F 1
+RAM A0-EF 1
+RAM 110-16F 1
+RAM 190-1EF 1
+BANK0 30-6F 1
+BANK1 A0-EF 1
+BANK2 110-16F 1
+BANK3 190-1EF 1
+CONST 3-469 2
+CONST 800-1FFF 2
+ENTRY 3-469 2
+ENTRY 800-1FFF 2
+IDLOC 2000-2003 2
+STACK 110-16F 1
+CODE 3-469 2
+CODE 800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 70-7D 1
+CONFIG 2007-2008 2
+EEDATA 2100-21FF 2
+STRCODE 3-469 2
+STRCODE 800-1FFF 2
+STRING 3-469 2
+STRING 800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\LEDAND_BUTTON_9.X.production.o
+7FC cinit CODE >462:C:\Users\Admin\AppData\Local\Temp\xcAs4ig.s
+7FC cinit CODE >465:C:\Users\Admin\AppData\Local\Temp\xcAs4ig.s
+7FC cinit CODE >471:C:\Users\Admin\AppData\Local\Temp\xcAs4ig.s
+7FC cinit CODE >473:C:\Users\Admin\AppData\Local\Temp\xcAs4ig.s
+7FD cinit CODE >474:C:\Users\Admin\AppData\Local\Temp\xcAs4ig.s
+46A maintext CODE >12:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+46A maintext CODE >14:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+46E maintext CODE >15:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+471 maintext CODE >16:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+475 maintext CODE >17:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+478 maintext CODE >18:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+47B maintext CODE >19:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+47E maintext CODE >20:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+481 maintext CODE >21:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+482 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+486 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+488 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+48C maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+48E maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+490 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+495 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+498 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+49A maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+49C maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4A1 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4A5 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4A7 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4A9 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4AE maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4B2 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4B4 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4B6 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4BB maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4BF maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4C1 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4C3 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4C8 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4CC maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4CE maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4D0 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4D5 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4D9 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4DB maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4DD maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4E2 maintext CODE >25:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4F0 maintext CODE >27:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4F1 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4F3 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4F5 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4F9 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4FB maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+4FD maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+502 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+505 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+507 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+509 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+50E maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+512 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+514 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+516 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+51B maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+51F maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+521 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+523 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+528 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+52C maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+52E maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+530 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+535 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+539 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+53B maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+53D maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+542 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+546 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+548 maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+54A maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+54F maintext CODE >29:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+55E maintext CODE >31:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+55F maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+561 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+563 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+567 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+569 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+56B maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+570 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+573 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+575 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+577 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+57C maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+580 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+582 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+584 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+589 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+58D maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+58F maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+591 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+596 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+59A maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+59C maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+59E maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5A3 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5A7 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5A9 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5AB maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5B0 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5B4 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5B6 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5B8 maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5BD maintext CODE >33:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5CC maintext CODE >35:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5CD maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5CF maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5D1 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5D5 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5D7 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5D9 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5DE maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5E1 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5E3 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5E5 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5EA maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5EE maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5F0 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5F2 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5F7 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5FB maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5FD maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+5FF maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+604 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+608 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+60A maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+60C maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+611 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+615 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+617 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+619 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+61E maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+622 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+624 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+626 maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+62B maintext CODE >37:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+63A maintext CODE >39:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+63B maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+63D maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+63F maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+643 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+645 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+647 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+64C maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+64F maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+651 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+653 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+658 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+65C maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+65E maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+660 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+665 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+669 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+66B maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+66D maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+672 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+676 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+678 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+67A maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+67F maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+683 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+685 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+687 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+68C maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+690 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+692 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+694 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+699 maintext CODE >41:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6A8 maintext CODE >43:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6A9 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6AB maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6AD maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6B1 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6B3 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6B5 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6BA maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6BD maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6BF maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6C1 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6C6 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6CA maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6CC maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6CE maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6D3 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6D7 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6D9 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6DB maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6E0 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6E4 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6E6 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6E8 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6ED maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6F1 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6F3 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6F5 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6FA maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+6FE maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+700 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+702 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+707 maintext CODE >45:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+716 maintext CODE >47:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+717 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+719 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+71B maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+71F maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+721 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+723 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+728 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+72B maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+72D maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+72F maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+734 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+738 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+73A maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+73C maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+741 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+745 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+747 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+749 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+74E maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+752 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+754 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+756 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+75B maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+75F maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+761 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+763 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+768 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+76C maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+76E maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+770 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+775 maintext CODE >49:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+784 maintext CODE >51:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+785 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+787 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+789 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+78D maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+78F maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+791 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+796 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+799 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+79B maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+79D maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7A2 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7A6 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7A8 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7AA maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7AF maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7B3 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7B5 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7B7 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7BC maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7C0 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7C2 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7C4 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7C9 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7CD maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7CF maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7D1 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7D6 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7DA maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7DC maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7DE maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7E3 maintext CODE >53:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7F2 maintext CODE >55:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7F3 maintext CODE >56:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7F3 maintext CODE >57:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+7F7 maintext CODE >59:C:\Users\Admin\MPLABXProjects\LEDAND BUTTON 9.X\LED AND BUTTON.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hspace_0 800 0 ABS 0 - -
+__Hspace_1 30 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Hstrings 0 0 ABS 0 strings -
+___sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+_main 8D4 0 CODE 0 maintext dist/default/production\LEDAND_BUTTON_9.X.production.o
+btemp 7E 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+start 0 0 CODE 0 init C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+__size_of_main 0 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hpowerup 0 0 CODE 0 powerup -
+intlevel0 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+wtemp0 7E 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hfunctab 0 0 ENTRY 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+_ANSELH 189 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Lmaintext 0 0 ABS 0 maintext -
+___stackhi 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+___stacklo 0 0 ABS 0 - C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+start_initialization FF8 0 CODE 0 cinit dist/default/production\LEDAND_BUTTON_9.X.production.o
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\LEDAND_BUTTON_9.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit 1000 0 CODE 0 cinit -
+__Hstack 0 0 STACK 2 stack -
+__Hmaintext 0 0 ABS 0 maintext -
+__Hcommon 0 0 ABS 0 common -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit FF8 0 CODE 0 cinit -
+__Lstack 0 0 STACK 2 stack -
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 0 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 0 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_RA0 28 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC0 38 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC1 39 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC2 3A 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC3 3B 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC4 3C 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC5 3D 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC6 3E 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RC7 3F 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD0 40 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD1 41 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD2 42 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD3 43 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD4 44 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD5 45 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD6 46 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_RD7 47 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__S0 800 0 ABS 0 - -
+__S1 30 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__Lintentry 0 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Admin\AppData\Local\Temp\xcAs4ig.o
+__pmaintext 8D4 0 CODE 0 maintext dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Lcommon 0 0 ABS 0 common -
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__Lend_init 0 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization FF8 0 CODE 0 cinit dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hintentry 0 0 CODE 0 intentry -
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 0 0 CODE 0 reset_vec -
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Lfunctab 0 0 ENTRY 0 functab -
+__Lclrtext 0 0 ABS 0 clrtext -
+__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hend_init 6 0 CODE 0 end_init -
+__end_of_main FF8 0 CODE 0 maintext dist/default/production\LEDAND_BUTTON_9.X.production.o
+_ANSEL 188 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_PORTA 5 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_PORTC 7 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_PORTD 8 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_TRISA 85 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_TRISC 87 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+_TRISD 88 0 ABS 0 - dist/default/production\LEDAND_BUTTON_9.X.production.o
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__initialization FF8 0 CODE 0 cinit dist/default/production\LEDAND_BUTTON_9.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 7FC FF8 4 2
+maintext 0 46A 8D4 392 2
+cstackBANK0 1 20 20 10 1
+reset_vec 0 0 0 3 2
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES

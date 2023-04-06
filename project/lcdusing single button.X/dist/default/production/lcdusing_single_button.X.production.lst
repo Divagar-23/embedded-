@@ -1,0 +1,917 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Mon Mar 20 15:44:02 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	idataBANK0,global,class=CODE,delta=2,noexec
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     7                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1,noexec
+     8                           	psect	inittext,global,class=CODE,delta=2
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+    10                           	psect	maintext,global,class=CODE,split=1,delta=2
+    11                           	psect	text1,local,class=CODE,merge=1,delta=2
+    12                           	psect	text2,local,class=CODE,merge=1,delta=2
+    13                           	psect	text3,local,class=CODE,merge=1,delta=2
+    14                           	dabs	1,0x7E,2
+    15  0000                     
+    16                           ; Version 2.20
+    17                           ; Generated 12/02/2020 GMT
+    18                           ; 
+    19                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    20                           ; All rights reserved.
+    21                           ; 
+    22                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    23                           ; 
+    24                           ; Redistribution and use in source and binary forms, with or without modification, are
+    25                           ; permitted provided that the following conditions are met:
+    26                           ; 
+    27                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    28                           ;        conditions and the following disclaimer.
+    29                           ; 
+    30                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    31                           ;        of conditions and the following disclaimer in the documentation and/or other
+    32                           ;        materials provided with the distribution.
+    33                           ; 
+    34                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    35                           ;        software without specific prior written permission.
+    36                           ; 
+    37                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    38                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    39                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    40                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    41                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    42                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    43                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    44                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    45                           ; 
+    46                           ; 
+    47                           ; Code-generator required, PIC16F887 Definitions
+    48                           ; 
+    49                           ; SFR Addresses
+    50  0000                     	;# 
+    51  0001                     	;# 
+    52  0002                     	;# 
+    53  0003                     	;# 
+    54  0004                     	;# 
+    55  0005                     	;# 
+    56  0006                     	;# 
+    57  0007                     	;# 
+    58  0008                     	;# 
+    59  0009                     	;# 
+    60  000A                     	;# 
+    61  000B                     	;# 
+    62  000C                     	;# 
+    63  000D                     	;# 
+    64  000E                     	;# 
+    65  000E                     	;# 
+    66  000F                     	;# 
+    67  0010                     	;# 
+    68  0011                     	;# 
+    69  0012                     	;# 
+    70  0013                     	;# 
+    71  0014                     	;# 
+    72  0015                     	;# 
+    73  0015                     	;# 
+    74  0016                     	;# 
+    75  0017                     	;# 
+    76  0018                     	;# 
+    77  0019                     	;# 
+    78  001A                     	;# 
+    79  001B                     	;# 
+    80  001B                     	;# 
+    81  001C                     	;# 
+    82  001D                     	;# 
+    83  001E                     	;# 
+    84  001F                     	;# 
+    85  0081                     	;# 
+    86  0085                     	;# 
+    87  0086                     	;# 
+    88  0087                     	;# 
+    89  0088                     	;# 
+    90  0089                     	;# 
+    91  008C                     	;# 
+    92  008D                     	;# 
+    93  008E                     	;# 
+    94  008F                     	;# 
+    95  0090                     	;# 
+    96  0091                     	;# 
+    97  0092                     	;# 
+    98  0093                     	;# 
+    99  0093                     	;# 
+   100  0093                     	;# 
+   101  0094                     	;# 
+   102  0095                     	;# 
+   103  0096                     	;# 
+   104  0097                     	;# 
+   105  0098                     	;# 
+   106  0099                     	;# 
+   107  009A                     	;# 
+   108  009B                     	;# 
+   109  009C                     	;# 
+   110  009D                     	;# 
+   111  009E                     	;# 
+   112  009F                     	;# 
+   113  0105                     	;# 
+   114  0107                     	;# 
+   115  0108                     	;# 
+   116  0109                     	;# 
+   117  010C                     	;# 
+   118  010C                     	;# 
+   119  010D                     	;# 
+   120  010E                     	;# 
+   121  010F                     	;# 
+   122  0185                     	;# 
+   123  0187                     	;# 
+   124  0188                     	;# 
+   125  0189                     	;# 
+   126  018C                     	;# 
+   127  018D                     	;# 
+   128  0000                     	;# 
+   129  0001                     	;# 
+   130  0002                     	;# 
+   131  0003                     	;# 
+   132  0004                     	;# 
+   133  0005                     	;# 
+   134  0006                     	;# 
+   135  0007                     	;# 
+   136  0008                     	;# 
+   137  0009                     	;# 
+   138  000A                     	;# 
+   139  000B                     	;# 
+   140  000C                     	;# 
+   141  000D                     	;# 
+   142  000E                     	;# 
+   143  000E                     	;# 
+   144  000F                     	;# 
+   145  0010                     	;# 
+   146  0011                     	;# 
+   147  0012                     	;# 
+   148  0013                     	;# 
+   149  0014                     	;# 
+   150  0015                     	;# 
+   151  0015                     	;# 
+   152  0016                     	;# 
+   153  0017                     	;# 
+   154  0018                     	;# 
+   155  0019                     	;# 
+   156  001A                     	;# 
+   157  001B                     	;# 
+   158  001B                     	;# 
+   159  001C                     	;# 
+   160  001D                     	;# 
+   161  001E                     	;# 
+   162  001F                     	;# 
+   163  0081                     	;# 
+   164  0085                     	;# 
+   165  0086                     	;# 
+   166  0087                     	;# 
+   167  0088                     	;# 
+   168  0089                     	;# 
+   169  008C                     	;# 
+   170  008D                     	;# 
+   171  008E                     	;# 
+   172  008F                     	;# 
+   173  0090                     	;# 
+   174  0091                     	;# 
+   175  0092                     	;# 
+   176  0093                     	;# 
+   177  0093                     	;# 
+   178  0093                     	;# 
+   179  0094                     	;# 
+   180  0095                     	;# 
+   181  0096                     	;# 
+   182  0097                     	;# 
+   183  0098                     	;# 
+   184  0099                     	;# 
+   185  009A                     	;# 
+   186  009B                     	;# 
+   187  009C                     	;# 
+   188  009D                     	;# 
+   189  009E                     	;# 
+   190  009F                     	;# 
+   191  0105                     	;# 
+   192  0107                     	;# 
+   193  0108                     	;# 
+   194  0109                     	;# 
+   195  010C                     	;# 
+   196  010C                     	;# 
+   197  010D                     	;# 
+   198  010E                     	;# 
+   199  010F                     	;# 
+   200  0185                     	;# 
+   201  0187                     	;# 
+   202  0188                     	;# 
+   203  0189                     	;# 
+   204  018C                     	;# 
+   205  018D                     	;# 
+   206                           
+   207                           	psect	idataBANK0
+   208  0744                     __pidataBANK0:
+   209                           
+   210                           ;initializer for _cc
+   211  0744  343F               	retlw	63
+   212  0745  3400               	retlw	0
+   213  0746  340F               	retlw	15
+   214  0747  3400               	retlw	0
+   215  0748  345B               	retlw	91
+   216  0749  3400               	retlw	0
+   217  074A  344F               	retlw	79
+   218  074B  3400               	retlw	0
+   219  074C  3466               	retlw	102
+   220  074D  3400               	retlw	0
+   221  074E  346D               	retlw	109
+   222  074F  3400               	retlw	0
+   223  0750  347D               	retlw	125
+   224  0751  3400               	retlw	0
+   225  0752  3407               	retlw	7
+   226  0753  3400               	retlw	0
+   227  0754  347F               	retlw	127
+   228  0755  3400               	retlw	0
+   229  0756  344F               	retlw	79
+   230  0757  3400               	retlw	0
+   231  0007                     _PORTC	set	7
+   232  0005                     _PORTA	set	5
+   233  0008                     _PORTD	set	8
+   234  0028                     _RA0	set	40
+   235  003F                     _RC7	set	63
+   236  003E                     _RC6	set	62
+   237  003D                     _RC5	set	61
+   238  0088                     _TRISD	set	136
+   239  0087                     _TRISC	set	135
+   240  0085                     _TRISA	set	133
+   241  0189                     _ANSELH	set	393
+   242  0188                     _ANSEL	set	392
+   243                           
+   244                           	psect	cinit
+   245  07EC                     start_initialization:	
+   246                           ; #config settings
+   247                           
+   248  07EC                     __initialization:
+   249                           
+   250                           ; Initialize objects allocated to BANK0
+   251  07EC  1383               	bcf	3,7	;select IRP bank0
+   252  07ED  3034               	movlw	low (__pdataBANK0+20)
+   253  07EE  00FD               	movwf	btemp+-1
+   254  07EF  3007               	movlw	high __pidataBANK0
+   255  07F0  00FE               	movwf	btemp
+   256  07F1  3044               	movlw	low __pidataBANK0
+   257  07F2  00FF               	movwf	btemp+1
+   258  07F3  3020               	movlw	low __pdataBANK0
+   259  07F4  0084               	movwf	4
+   260  07F5  120A  118A  2735  120A  118A  	fcall	init_ram0
+   261                           
+   262                           ; Clear objects allocated to COMMON
+   263  07FA  01F9               	clrf	__pbssCOMMON& (0+127)
+   264  07FB  01FA               	clrf	(__pbssCOMMON+1)& (0+127)
+   265  07FC                     end_of_initialization:	
+   266                           ;End of C runtime variable initialization code
+   267                           
+   268  07FC                     __end_of__initialization:
+   269  07FC  0183               	clrf	3
+   270  07FD  120A  118A  2F71   	ljmp	_main	;jump to C main() function
+   271                           
+   272                           	psect	bssCOMMON
+   273  0079                     __pbssCOMMON:
+   274  0079                     _count:
+   275  0079                     	ds	2
+   276                           
+   277                           	psect	dataBANK0
+   278  0020                     __pdataBANK0:
+   279  0020                     _cc:
+   280  0020                     	ds	20
+   281                           
+   282                           	psect	inittext
+   283  0731                     init_fetch0:	
+   284                           ;	Called with low address in FSR and high address in W
+   285                           
+   286  0731  087E               	movf	btemp,w
+   287  0732  008A               	movwf	10
+   288  0733  087F               	movf	btemp+1,w
+   289  0734  0082               	movwf	2
+   290  0735                     init_ram0:	
+   291                           ;Called with:
+   292                           ;	high address of idata address in btemp 
+   293                           ;	low address of idata address in btemp+1 
+   294                           ;	low address of data in FSR
+   295                           ;	high address + 1 of data in btemp-1
+   296                           
+   297  0735  120A  118A  2731  120A  118A  	fcall	init_fetch0
+   298  073A  0080               	movwf	0
+   299  073B  0A84               	incf	4,f
+   300  073C  0804               	movf	4,w
+   301  073D  067D               	xorwf	btemp+-1,w
+   302  073E  1903               	btfsc	3,2
+   303  073F  3400               	retlw	0
+   304  0740  0AFF               	incf	btemp+1,f
+   305  0741  1903               	btfsc	3,2
+   306  0742  0AFE               	incf	btemp,f
+   307  0743  2F35               	goto	init_ram0
+   308                           
+   309                           	psect	cstackCOMMON
+   310  0070                     __pcstackCOMMON:
+   311  0070                     ??_pulse:
+   312  0070                     ?_main:	
+   313                           ; 1 bytes @ 0x0
+   314                           
+   315  0070                     ?_pulse:	
+   316                           ; 1 bytes @ 0x0
+   317                           
+   318                           
+   319                           ; 2 bytes @ 0x0
+   320  0070                     	ds	2
+   321  0072                     ?_LCD:
+   322  0072                     ?_display:	
+   323                           ; 1 bytes @ 0x2
+   324                           
+   325  0072                     LCD@a:	
+   326                           ; 1 bytes @ 0x2
+   327                           
+   328  0072                     display@i:	
+   329                           ; 2 bytes @ 0x2
+   330                           
+   331                           
+   332                           ; 2 bytes @ 0x2
+   333  0072                     	ds	2
+   334  0074                     ??_display:
+   335  0074                     LCD@b:	
+   336                           ; 1 bytes @ 0x4
+   337                           
+   338                           
+   339                           ; 2 bytes @ 0x4
+   340  0074                     	ds	2
+   341  0076                     ??_LCD:
+   342  0076                     ??_main:	
+   343                           ; 1 bytes @ 0x6
+   344                           
+   345                           
+   346                           ; 1 bytes @ 0x6
+   347  0076                     	ds	1
+   348  0077                     main@i:
+   349                           
+   350                           ; 2 bytes @ 0x7
+   351  0077                     	ds	2
+   352                           
+   353                           	psect	maintext
+   354  0771                     __pmaintext:	
+   355 ;;
+   356 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   357 ;;
+   358 ;; *************** function _main *****************
+   359 ;; Defined at:
+   360 ;;		line 35 in file "button.c"
+   361 ;; Parameters:    Size  Location     Type
+   362 ;;		None
+   363 ;; Auto vars:     Size  Location     Type
+   364 ;;  i               2    7[COMMON] int 
+   365 ;; Return value:  Size  Location     Type
+   366 ;;                  1    wreg      void 
+   367 ;; Registers used:
+   368 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   369 ;; Tracked objects:
+   370 ;;		On entry : B00/0
+   371 ;;		On exit  : 0/0
+   372 ;;		Unchanged: 0/0
+   373 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   374 ;;      Params:         0       0       0       0       0
+   375 ;;      Locals:         2       0       0       0       0
+   376 ;;      Temps:          1       0       0       0       0
+   377 ;;      Totals:         3       0       0       0       0
+   378 ;;Total ram usage:        3 bytes
+   379 ;; Hardware stack levels required when called: 2
+   380 ;; This function calls:
+   381 ;;		_LCD
+   382 ;;		_display
+   383 ;; This function is called by:
+   384 ;;		Startup code after reset
+   385 ;; This function uses a non-reentrant model
+   386 ;;
+   387                           
+   388                           
+   389                           ;psect for function _main
+   390  0771                     _main:
+   391  0771                     l714:	
+   392                           ;incstack = 0
+   393                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   394                           
+   395                           
+   396                           ;button.c: 37:     TRISA=0xFF;
+   397  0771  30FF               	movlw	255
+   398  0772  1683               	bsf	3,5	;RP0=1, select bank1
+   399  0773  1303               	bcf	3,6	;RP1=0, select bank1
+   400  0774  0085               	movwf	5	;volatile
+   401  0775                     l716:
+   402                           
+   403                           ;button.c: 38:     PORTA=0x00;
+   404  0775  1283               	bcf	3,5	;RP0=0, select bank0
+   405  0776  1303               	bcf	3,6	;RP1=0, select bank0
+   406  0777  0185               	clrf	5	;volatile
+   407  0778                     l718:
+   408                           
+   409                           ;button.c: 39:     TRISC=0x00;
+   410  0778  1683               	bsf	3,5	;RP0=1, select bank1
+   411  0779  1303               	bcf	3,6	;RP1=0, select bank1
+   412  077A  0187               	clrf	7	;volatile
+   413  077B                     l720:
+   414                           
+   415                           ;button.c: 40:     PORTC=0x00;
+   416  077B  1283               	bcf	3,5	;RP0=0, select bank0
+   417  077C  1303               	bcf	3,6	;RP1=0, select bank0
+   418  077D  0187               	clrf	7	;volatile
+   419  077E                     l722:
+   420                           
+   421                           ;button.c: 41:     TRISD=0x00;
+   422  077E  1683               	bsf	3,5	;RP0=1, select bank1
+   423  077F  1303               	bcf	3,6	;RP1=0, select bank1
+   424  0780  0188               	clrf	8	;volatile
+   425  0781                     l724:
+   426                           
+   427                           ;button.c: 42:     PORTD=0x00;
+   428  0781  1283               	bcf	3,5	;RP0=0, select bank0
+   429  0782  1303               	bcf	3,6	;RP1=0, select bank0
+   430  0783  0188               	clrf	8	;volatile
+   431  0784                     l726:
+   432                           
+   433                           ;button.c: 43:     ANSEL=0x00;
+   434  0784  1683               	bsf	3,5	;RP0=1, select bank3
+   435  0785  1703               	bsf	3,6	;RP1=1, select bank3
+   436  0786  0188               	clrf	8	;volatile
+   437  0787                     l728:
+   438                           
+   439                           ;button.c: 44:     ANSELH=0x00;
+   440  0787  0189               	clrf	9	;volatile
+   441  0788                     l730:
+   442                           
+   443                           ;button.c: 45:         LCD(0x38,0);
+   444  0788  3038               	movlw	56
+   445  0789  00F2               	movwf	LCD@a
+   446  078A  3000               	movlw	0
+   447  078B  00F3               	movwf	LCD@a+1
+   448  078C  3000               	movlw	0
+   449  078D  00F4               	movwf	LCD@b
+   450  078E  00F5               	movwf	LCD@b+1
+   451  078F  120A  118A  2719  120A  118A  	fcall	_LCD
+   452  0794                     l732:
+   453                           
+   454                           ;button.c: 46:          LCD(0x0E,0);
+   455  0794  300E               	movlw	14
+   456  0795  00F2               	movwf	LCD@a
+   457  0796  3000               	movlw	0
+   458  0797  00F3               	movwf	LCD@a+1
+   459  0798  3000               	movlw	0
+   460  0799  00F4               	movwf	LCD@b
+   461  079A  00F5               	movwf	LCD@b+1
+   462  079B  120A  118A  2719  120A  118A  	fcall	_LCD
+   463  07A0                     l734:
+   464                           
+   465                           ;button.c: 48:     {;button.c: 49:         if(RA0==1)
+   466  07A0  1283               	bcf	3,5	;RP0=0, select bank0
+   467  07A1  1303               	bcf	3,6	;RP1=0, select bank0
+   468  07A2  1C05               	btfss	5,0	;volatile
+   469  07A3  2FA5               	goto	u41
+   470  07A4  2FA6               	goto	u40
+   471  07A5                     u41:
+   472  07A5  2FA0               	goto	l734
+   473  07A6                     u40:
+   474  07A6                     l736:
+   475                           
+   476                           ;button.c: 50:         {;button.c: 51:             for(int i=0;i<=count;i++)
+   477  07A6  01F7               	clrf	main@i
+   478  07A7  01F8               	clrf	main@i+1
+   479  07A8  2FDA               	goto	l750
+   480  07A9                     l738:
+   481                           
+   482                           ;button.c: 52:             {;button.c: 53:        LCD(0x80,0);
+   483  07A9  3080               	movlw	128
+   484  07AA  00F2               	movwf	LCD@a
+   485  07AB  3000               	movlw	0
+   486  07AC  00F3               	movwf	LCD@a+1
+   487  07AD  3000               	movlw	0
+   488  07AE  00F4               	movwf	LCD@b
+   489  07AF  00F5               	movwf	LCD@b+1
+   490  07B0  120A  118A  2719  120A  118A  	fcall	_LCD
+   491  07B5                     l740:
+   492                           
+   493                           ;button.c: 54:        display(cc[i]);
+   494  07B5  0877               	movf	main@i,w
+   495  07B6  00F6               	movwf	??_main
+   496  07B7  0776               	addwf	??_main,w
+   497  07B8  3E20               	addlw	(low (_cc| 0))& (0+255)
+   498  07B9  0084               	movwf	4
+   499  07BA  1383               	bcf	3,7	;select IRP bank0
+   500  07BB  0800               	movf	0,w
+   501  07BC  00F2               	movwf	display@i
+   502  07BD  0A84               	incf	4,f
+   503  07BE  0800               	movf	0,w
+   504  07BF  00F3               	movwf	display@i+1
+   505  07C0  120A  118A  2725  120A  118A  	fcall	_display
+   506  07C5                     l742:
+   507                           
+   508                           ;button.c: 55:        count++;
+   509  07C5  3001               	movlw	1
+   510  07C6  07F9               	addwf	_count,f
+   511  07C7  1803               	skipnc
+   512  07C8  0AFA               	incf	_count+1,f
+   513  07C9  3000               	movlw	0
+   514  07CA  07FA               	addwf	_count+1,f
+   515  07CB                     l744:
+   516                           
+   517                           ;button.c: 56:        if(count==10)
+   518  07CB  300A               	movlw	10
+   519  07CC  0679               	xorwf	_count,w
+   520  07CD  047A               	iorwf	_count+1,w
+   521  07CE  1D03               	btfss	3,2
+   522  07CF  2FD1               	goto	u51
+   523  07D0  2FD2               	goto	u50
+   524  07D1                     u51:
+   525  07D1  2FD4               	goto	l748
+   526  07D2                     u50:
+   527  07D2                     l746:
+   528                           
+   529                           ;button.c: 57:        {;button.c: 58:            count=0;
+   530  07D2  01F9               	clrf	_count
+   531  07D3  01FA               	clrf	_count+1
+   532  07D4                     l748:
+   533                           
+   534                           ;button.c: 60:            }
+   535  07D4  3001               	movlw	1
+   536  07D5  07F7               	addwf	main@i,f
+   537  07D6  1803               	skipnc
+   538  07D7  0AF8               	incf	main@i+1,f
+   539  07D8  3000               	movlw	0
+   540  07D9  07F8               	addwf	main@i+1,f
+   541  07DA                     l750:
+   542  07DA  087A               	movf	_count+1,w
+   543  07DB  3A80               	xorlw	128
+   544  07DC  00F6               	movwf	??_main
+   545  07DD  0878               	movf	main@i+1,w
+   546  07DE  3A80               	xorlw	128
+   547  07DF  0276               	subwf	??_main,w
+   548  07E0  1D03               	skipz
+   549  07E1  2FE4               	goto	u65
+   550  07E2  0877               	movf	main@i,w
+   551  07E3  0279               	subwf	_count,w
+   552  07E4                     u65:
+   553  07E4  1803               	skipnc
+   554  07E5  2FE7               	goto	u61
+   555  07E6  2FE8               	goto	u60
+   556  07E7                     u61:
+   557  07E7  2FA9               	goto	l738
+   558  07E8                     u60:
+   559  07E8  2FA0               	goto	l734
+   560  07E9  120A  118A  2800   	ljmp	start
+   561  07EC                     __end_of_main:
+   562                           
+   563                           	psect	text1
+   564  0725                     __ptext1:	
+   565 ;; *************** function _display *****************
+   566 ;; Defined at:
+   567 ;;		line 26 in file "button.c"
+   568 ;; Parameters:    Size  Location     Type
+   569 ;;  i               2    2[COMMON] int 
+   570 ;; Auto vars:     Size  Location     Type
+   571 ;;		None
+   572 ;; Return value:  Size  Location     Type
+   573 ;;                  1    wreg      void 
+   574 ;; Registers used:
+   575 ;;		wreg, status,2, status,0, pclath, cstack
+   576 ;; Tracked objects:
+   577 ;;		On entry : 0/0
+   578 ;;		On exit  : 0/0
+   579 ;;		Unchanged: 0/0
+   580 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   581 ;;      Params:         2       0       0       0       0
+   582 ;;      Locals:         0       0       0       0       0
+   583 ;;      Temps:          0       0       0       0       0
+   584 ;;      Totals:         2       0       0       0       0
+   585 ;;Total ram usage:        2 bytes
+   586 ;; Hardware stack levels used: 1
+   587 ;; Hardware stack levels required when called: 1
+   588 ;; This function calls:
+   589 ;;		_pulse
+   590 ;; This function is called by:
+   591 ;;		_main
+   592 ;; This function uses a non-reentrant model
+   593 ;;
+   594                           
+   595                           
+   596                           ;psect for function _display
+   597  0725                     _display:
+   598  0725                     l708:	
+   599                           ;incstack = 0
+   600                           ; Regs used in _display: [wreg+status,2+status,0+pclath+cstack]
+   601                           
+   602                           
+   603                           ;button.c: 26: void display(int i);button.c: 27: {;button.c: 28:    RC5=1;
+   604  0725  1283               	bcf	3,5	;RP0=0, select bank0
+   605  0726  1303               	bcf	3,6	;RP1=0, select bank0
+   606  0727  1687               	bsf	7,5	;volatile
+   607                           
+   608                           ;button.c: 29:    RC6=0;
+   609  0728  1307               	bcf	7,6	;volatile
+   610  0729                     l710:
+   611                           
+   612                           ;button.c: 30:    PORTD=i;
+   613  0729  0872               	movf	display@i,w
+   614  072A  0088               	movwf	8	;volatile
+   615  072B                     l712:
+   616                           
+   617                           ;button.c: 31:    pulse();
+   618  072B  120A  118A  2758  120A  118A  	fcall	_pulse
+   619  0730                     l37:
+   620  0730  0008               	return
+   621  0731                     __end_of_display:
+   622                           
+   623                           	psect	text2
+   624  0719                     __ptext2:	
+   625 ;; *************** function _LCD *****************
+   626 ;; Defined at:
+   627 ;;		line 12 in file "button.c"
+   628 ;; Parameters:    Size  Location     Type
+   629 ;;  a               2    2[COMMON] int 
+   630 ;;  b               2    4[COMMON] int 
+   631 ;; Auto vars:     Size  Location     Type
+   632 ;;		None
+   633 ;; Return value:  Size  Location     Type
+   634 ;;                  1    wreg      void 
+   635 ;; Registers used:
+   636 ;;		wreg, status,2, status,0, pclath, cstack
+   637 ;; Tracked objects:
+   638 ;;		On entry : 0/0
+   639 ;;		On exit  : 0/0
+   640 ;;		Unchanged: 0/0
+   641 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   642 ;;      Params:         4       0       0       0       0
+   643 ;;      Locals:         0       0       0       0       0
+   644 ;;      Temps:          0       0       0       0       0
+   645 ;;      Totals:         4       0       0       0       0
+   646 ;;Total ram usage:        4 bytes
+   647 ;; Hardware stack levels used: 1
+   648 ;; Hardware stack levels required when called: 1
+   649 ;; This function calls:
+   650 ;;		_pulse
+   651 ;; This function is called by:
+   652 ;;		_main
+   653 ;; This function uses a non-reentrant model
+   654 ;;
+   655                           
+   656                           
+   657                           ;psect for function _LCD
+   658  0719                     _LCD:
+   659  0719                     l702:	
+   660                           ;incstack = 0
+   661                           ; Regs used in _LCD: [wreg+status,2+status,0+pclath+cstack]
+   662                           
+   663                           
+   664                           ;button.c: 12: void LCD(int a,int b);button.c: 13: {;button.c: 14:     RC5=0;
+   665  0719  1283               	bcf	3,5	;RP0=0, select bank0
+   666  071A  1303               	bcf	3,6	;RP1=0, select bank0
+   667  071B  1287               	bcf	7,5	;volatile
+   668                           
+   669                           ;button.c: 15:     RC6=0;
+   670  071C  1307               	bcf	7,6	;volatile
+   671  071D                     l704:
+   672                           
+   673                           ;button.c: 16:     PORTD=a;
+   674  071D  0872               	movf	LCD@a,w
+   675  071E  0088               	movwf	8	;volatile
+   676  071F                     l706:
+   677                           
+   678                           ;button.c: 17:     pulse();
+   679  071F  120A  118A  2758  120A  118A  	fcall	_pulse
+   680  0724                     l31:
+   681  0724  0008               	return
+   682  0725                     __end_of_LCD:
+   683                           
+   684                           	psect	text3
+   685  0758                     __ptext3:	
+   686 ;; *************** function _pulse *****************
+   687 ;; Defined at:
+   688 ;;		line 19 in file "button.c"
+   689 ;; Parameters:    Size  Location     Type
+   690 ;;		None
+   691 ;; Auto vars:     Size  Location     Type
+   692 ;;		None
+   693 ;; Return value:  Size  Location     Type
+   694 ;;                  2    8[None  ] int 
+   695 ;; Registers used:
+   696 ;;		wreg
+   697 ;; Tracked objects:
+   698 ;;		On entry : 0/0
+   699 ;;		On exit  : 0/0
+   700 ;;		Unchanged: 0/0
+   701 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   702 ;;      Params:         0       0       0       0       0
+   703 ;;      Locals:         0       0       0       0       0
+   704 ;;      Temps:          2       0       0       0       0
+   705 ;;      Totals:         2       0       0       0       0
+   706 ;;Total ram usage:        2 bytes
+   707 ;; Hardware stack levels used: 1
+   708 ;; This function calls:
+   709 ;;		Nothing
+   710 ;; This function is called by:
+   711 ;;		_LCD
+   712 ;;		_display
+   713 ;; This function uses a non-reentrant model
+   714 ;;
+   715                           
+   716                           
+   717                           ;psect for function _pulse
+   718  0758                     _pulse:
+   719  0758                     l646:	
+   720                           ;incstack = 0
+   721                           ; Regs used in _pulse: [wreg]
+   722                           
+   723                           
+   724                           ;button.c: 21:     RC7=1;
+   725  0758  1283               	bcf	3,5	;RP0=0, select bank0
+   726  0759  1303               	bcf	3,6	;RP1=0, select bank0
+   727  075A  1787               	bsf	7,7	;volatile
+   728  075B                     l648:
+   729                           
+   730                           ;button.c: 22:     _delay((unsigned long)((1000)*(40000/4000.0)));
+   731  075B  300D               	movlw	13
+   732  075C  00F1               	movwf	??_pulse+1
+   733  075D  30FB               	movlw	251
+   734  075E  00F0               	movwf	??_pulse
+   735  075F                     u77:
+   736  075F  0BF0               	decfsz	??_pulse,f
+   737  0760  2F5F               	goto	u77
+   738  0761  0BF1               	decfsz	??_pulse+1,f
+   739  0762  2F5F               	goto	u77
+   740  0763  2F64               	nop2
+   741  0764                     l650:
+   742                           
+   743                           ;button.c: 23:     RC7=0;
+   744  0764  1283               	bcf	3,5	;RP0=0, select bank0
+   745  0765  1303               	bcf	3,6	;RP1=0, select bank0
+   746  0766  1387               	bcf	7,7	;volatile
+   747                           
+   748                           ;button.c: 24:     _delay((unsigned long)((1000)*(40000/4000.0)));
+   749  0767  300D               	movlw	13
+   750  0768  00F1               	movwf	??_pulse+1
+   751  0769  30FB               	movlw	251
+   752  076A  00F0               	movwf	??_pulse
+   753  076B                     u87:
+   754  076B  0BF0               	decfsz	??_pulse,f
+   755  076C  2F6B               	goto	u87
+   756  076D  0BF1               	decfsz	??_pulse+1,f
+   757  076E  2F6B               	goto	u87
+   758  076F  2F70               	nop2
+   759  0770                     l34:
+   760  0770  0008               	return
+   761  0771                     __end_of_pulse:
+   762  007E                     btemp	set	126	;btemp
+   763  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        20
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      9      11
+    BANK0            80      0      20
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _main->_LCD
+    _display->_pulse
+    _LCD->_pulse
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 3     3      0     622
+                                              6 COMMON     3     3      0
+                                _LCD
+                            _display
+ ---------------------------------------------------------------------------------
+ (1) _display                                              2     0      2      98
+                                              2 COMMON     2     0      2
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (1) _LCD                                                  4     0      4     478
+                                              2 COMMON     4     0      4
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (2) _pulse                                                2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _LCD
+     _pulse
+   _display
+     _pulse
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BANK3               60      0       0       9        0.0%
+BITBANK3            60      0       0       8        0.0%
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               60      0       0      11        0.0%
+BITBANK2            60      0       0      10        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0      14       5       25.0%
+BITBANK0            50      0       0       4        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      9       B       1       78.6%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      1F      12        0.0%
+ABS                  0      0      1F       3        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Mon Mar 20 15:44:02 2023
+
+                      pc 0002                       l31 0724                       l34 0770  
+                     l37 0730                       u40 07A6                       u41 07A5  
+                     u50 07D2                       u51 07D1                       u60 07E8  
+                     u61 07E7                       u65 07E4                       u77 075F  
+                     u87 076B                       _cc 0020                       fsr 0004  
+                    l702 0719                      l710 0729                      l704 071D  
+                    l712 072B                      l720 077B                      l650 0764  
+                    l706 071F                      l730 0788                      l722 077E  
+                    l714 0771                      l708 0725                      l740 07B5  
+                    l732 0794                      l724 0781                      l716 0775  
+                    l646 0758                      l742 07C5                      l750 07DA  
+                    l734 07A0                      l726 0784                      l718 0778  
+                    l648 075B                      l744 07CB                      l736 07A6  
+                    l728 0787                      l746 07D2                      l738 07A9  
+                    l748 07D4                      _RA0 0028                      _LCD 0719  
+                    _RC5 003D                      _RC6 003E                      _RC7 003F  
+                    fsr0 0004                      indf 0000                     LCD@a 0072  
+                   LCD@b 0074                     ?_LCD 0072                     _main 0771  
+                   btemp 007E                     start 0000                    ??_LCD 0076  
+                  ?_main 0070                    _ANSEL 0188                    _PORTA 0005  
+                  _PORTC 0007                    _PORTD 0008                    _TRISA 0085  
+                  _TRISC 0087                    _TRISD 0088          __end_of_display 0731  
+                  _count 0079                    _pulse 0758                    main@i 0077  
+                  pclath 000A                    status 0003                    wtemp0 007E  
+        __initialization 07EC             __end_of_main 07EC                   ??_main 0076  
+                 ?_pulse 0070                   _ANSELH 0189                ??_display 0074  
+__end_of__initialization 07FC           __pcstackCOMMON 0070             __pidataBANK0 0744  
+          __end_of_pulse 0771                  ??_pulse 0070               __pmaintext 0771  
+                __ptext1 0725                  __ptext2 0719                  __ptext3 0758  
+                _display 0725             __size_of_LCD 000C     end_of_initialization 07FC  
+    start_initialization 07EC              __end_of_LCD 0725               init_fetch0 0731  
+            __pdataBANK0 0020              __pbssCOMMON 0079                ___latbits 0002  
+               ?_display 0072           __size_of_pulse 0019         __size_of_display 000C  
+          __size_of_main 007B                 display@i 0072                 init_ram0 0735  

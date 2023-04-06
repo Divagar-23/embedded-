@@ -1,0 +1,140 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F887 ]
+[d frameptr 0 ]
+"13 C:\Users\Admin\MPLABXProjects\atm using lcd.X\atm.c
+[v _pulse pulse `(v  1 e 1 0 ]
+"20
+[v _LCD LCD `(v  1 e 1 0 ]
+"27
+[v _function function `(v  1 e 1 0 ]
+"38
+[v _pad pad `(v  1 e 1 0 ]
+"63
+[v _firstrow firstrow `(v  1 e 1 0 ]
+"69
+[v _secondrow secondrow `(v  1 e 1 0 ]
+"75
+[v _thirdrow thirdrow `(v  1 e 1 0 ]
+"81
+[v _keypad keypad `(v  1 e 1 0 ]
+"102
+[v _main main `(v  1 e 1 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"12 C:\Users\Admin\MPLABXProjects\atm using lcd.X\atm.c
+[v _cc cc `[10]i  1 e 20 0 ]
+[v _sum sum `i  1 e 2 0 ]
+"228 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f887.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"290
+[v _PORTC PORTC `VEuc  1 e 1 @7 ]
+"352
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"1478
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1540
+[v _TRISC TRISC `VEuc  1 e 1 @135 ]
+"1602
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"3387
+[v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
+"4133
+[v _RC0 RC0 `VEb  1 e 0 @56 ]
+"4136
+[v _RC1 RC1 `VEb  1 e 0 @57 ]
+"4139
+[v _RC2 RC2 `VEb  1 e 0 @58 ]
+"4142
+[v _RC3 RC3 `VEb  1 e 0 @59 ]
+"4181
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"4184
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"4187
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"4196
+[v _RD5 RD5 `VEb  1 e 0 @69 ]
+"4199
+[v _RD6 RD6 `VEb  1 e 0 @70 ]
+"4202
+[v _RD7 RD7 `VEb  1 e 0 @71 ]
+"102 C:\Users\Admin\MPLABXProjects\atm using lcd.X\atm.c
+[v _main main `(v  1 e 1 0 ]
+{
+"113
+[v main@flag flag `i  1 a 2 12 ]
+"160
+} 0
+"81
+[v _keypad keypad `(v  1 e 1 0 ]
+{
+"101
+} 0
+"75
+[v _thirdrow thirdrow `(v  1 e 1 0 ]
+{
+"80
+} 0
+"69
+[v _secondrow secondrow `(v  1 e 1 0 ]
+{
+"74
+} 0
+"38
+[v _pad pad `(v  1 e 1 0 ]
+{
+"40
+[v pad@count count `[10]i  1 a 20 3 ]
+[v pad@i i `i  1 a 2 23 ]
+"38
+[v pad@c c `i  1 p 2 6 ]
+[v pad@d d `i  1 p 2 8 ]
+[v pad@e e `i  1 p 2 10 ]
+"62
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"20 C:\Users\Admin\MPLABXProjects\atm using lcd.X\atm.c
+[v _LCD LCD `(v  1 e 1 0 ]
+{
+[v LCD@a a `i  1 p 2 2 ]
+[v LCD@b b `i  1 p 2 4 ]
+"26
+} 0
+"63
+[v _firstrow firstrow `(v  1 e 1 0 ]
+{
+"68
+} 0
+"27
+[v _function function `(v  1 e 1 0 ]
+{
+[v function@name name `*.24uc  1 a 1 wreg ]
+[v function@name name `*.24uc  1 a 1 wreg ]
+"29
+[v function@name name `*.24uc  1 a 1 3 ]
+"36
+} 0
+"13
+[v _pulse pulse `(v  1 e 1 0 ]
+{
+"19
+} 0

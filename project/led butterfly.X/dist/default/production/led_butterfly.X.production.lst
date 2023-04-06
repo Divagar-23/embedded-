@@ -1,0 +1,801 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Sat Mar 04 14:46:06 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	dabs	1,0x7E,2
+     8  0000                     
+     9                           ; Version 2.20
+    10                           ; Generated 12/02/2020 GMT
+    11                           ; 
+    12                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    13                           ; All rights reserved.
+    14                           ; 
+    15                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    16                           ; 
+    17                           ; Redistribution and use in source and binary forms, with or without modification, are
+    18                           ; permitted provided that the following conditions are met:
+    19                           ; 
+    20                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    21                           ;        conditions and the following disclaimer.
+    22                           ; 
+    23                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    24                           ;        of conditions and the following disclaimer in the documentation and/or other
+    25                           ;        materials provided with the distribution.
+    26                           ; 
+    27                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    28                           ;        software without specific prior written permission.
+    29                           ; 
+    30                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    31                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    32                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    33                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    34                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    35                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    36                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    37                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    38                           ; 
+    39                           ; 
+    40                           ; Code-generator required, PIC16F887 Definitions
+    41                           ; 
+    42                           ; SFR Addresses
+    43  0000                     	;# 
+    44  0001                     	;# 
+    45  0002                     	;# 
+    46  0003                     	;# 
+    47  0004                     	;# 
+    48  0005                     	;# 
+    49  0006                     	;# 
+    50  0007                     	;# 
+    51  0008                     	;# 
+    52  0009                     	;# 
+    53  000A                     	;# 
+    54  000B                     	;# 
+    55  000C                     	;# 
+    56  000D                     	;# 
+    57  000E                     	;# 
+    58  000E                     	;# 
+    59  000F                     	;# 
+    60  0010                     	;# 
+    61  0011                     	;# 
+    62  0012                     	;# 
+    63  0013                     	;# 
+    64  0014                     	;# 
+    65  0015                     	;# 
+    66  0015                     	;# 
+    67  0016                     	;# 
+    68  0017                     	;# 
+    69  0018                     	;# 
+    70  0019                     	;# 
+    71  001A                     	;# 
+    72  001B                     	;# 
+    73  001B                     	;# 
+    74  001C                     	;# 
+    75  001D                     	;# 
+    76  001E                     	;# 
+    77  001F                     	;# 
+    78  0081                     	;# 
+    79  0085                     	;# 
+    80  0086                     	;# 
+    81  0087                     	;# 
+    82  0088                     	;# 
+    83  0089                     	;# 
+    84  008C                     	;# 
+    85  008D                     	;# 
+    86  008E                     	;# 
+    87  008F                     	;# 
+    88  0090                     	;# 
+    89  0091                     	;# 
+    90  0092                     	;# 
+    91  0093                     	;# 
+    92  0093                     	;# 
+    93  0093                     	;# 
+    94  0094                     	;# 
+    95  0095                     	;# 
+    96  0096                     	;# 
+    97  0097                     	;# 
+    98  0098                     	;# 
+    99  0099                     	;# 
+   100  009A                     	;# 
+   101  009B                     	;# 
+   102  009C                     	;# 
+   103  009D                     	;# 
+   104  009E                     	;# 
+   105  009F                     	;# 
+   106  0105                     	;# 
+   107  0107                     	;# 
+   108  0108                     	;# 
+   109  0109                     	;# 
+   110  010C                     	;# 
+   111  010C                     	;# 
+   112  010D                     	;# 
+   113  010E                     	;# 
+   114  010F                     	;# 
+   115  0185                     	;# 
+   116  0187                     	;# 
+   117  0188                     	;# 
+   118  0189                     	;# 
+   119  018C                     	;# 
+   120  018D                     	;# 
+   121  0000                     	;# 
+   122  0001                     	;# 
+   123  0002                     	;# 
+   124  0003                     	;# 
+   125  0004                     	;# 
+   126  0005                     	;# 
+   127  0006                     	;# 
+   128  0007                     	;# 
+   129  0008                     	;# 
+   130  0009                     	;# 
+   131  000A                     	;# 
+   132  000B                     	;# 
+   133  000C                     	;# 
+   134  000D                     	;# 
+   135  000E                     	;# 
+   136  000E                     	;# 
+   137  000F                     	;# 
+   138  0010                     	;# 
+   139  0011                     	;# 
+   140  0012                     	;# 
+   141  0013                     	;# 
+   142  0014                     	;# 
+   143  0015                     	;# 
+   144  0015                     	;# 
+   145  0016                     	;# 
+   146  0017                     	;# 
+   147  0018                     	;# 
+   148  0019                     	;# 
+   149  001A                     	;# 
+   150  001B                     	;# 
+   151  001B                     	;# 
+   152  001C                     	;# 
+   153  001D                     	;# 
+   154  001E                     	;# 
+   155  001F                     	;# 
+   156  0081                     	;# 
+   157  0085                     	;# 
+   158  0086                     	;# 
+   159  0087                     	;# 
+   160  0088                     	;# 
+   161  0089                     	;# 
+   162  008C                     	;# 
+   163  008D                     	;# 
+   164  008E                     	;# 
+   165  008F                     	;# 
+   166  0090                     	;# 
+   167  0091                     	;# 
+   168  0092                     	;# 
+   169  0093                     	;# 
+   170  0093                     	;# 
+   171  0093                     	;# 
+   172  0094                     	;# 
+   173  0095                     	;# 
+   174  0096                     	;# 
+   175  0097                     	;# 
+   176  0098                     	;# 
+   177  0099                     	;# 
+   178  009A                     	;# 
+   179  009B                     	;# 
+   180  009C                     	;# 
+   181  009D                     	;# 
+   182  009E                     	;# 
+   183  009F                     	;# 
+   184  0105                     	;# 
+   185  0107                     	;# 
+   186  0108                     	;# 
+   187  0109                     	;# 
+   188  010C                     	;# 
+   189  010C                     	;# 
+   190  010D                     	;# 
+   191  010E                     	;# 
+   192  010F                     	;# 
+   193  0185                     	;# 
+   194  0187                     	;# 
+   195  0188                     	;# 
+   196  0189                     	;# 
+   197  018C                     	;# 
+   198  018D                     	;# 
+   199  0009                     _PORTE	set	9
+   200  0008                     _PORTD	set	8
+   201  0007                     _PORTC	set	7
+   202  0006                     _PORTB	set	6
+   203  0005                     _PORTA	set	5
+   204  0089                     _TRISE	set	137
+   205  0088                     _TRISD	set	136
+   206  0087                     _TRISC	set	135
+   207  0086                     _TRISB	set	134
+   208  0085                     _TRISA	set	133
+   209  0189                     _ANSELH	set	393
+   210  0188                     _ANSEL	set	392
+   211                           
+   212                           	psect	cinit
+   213  07FC                     start_initialization:	
+   214                           ; #config settings
+   215                           
+   216  07FC                     __initialization:
+   217  07FC                     end_of_initialization:	
+   218                           ;End of C runtime variable initialization code
+   219                           
+   220  07FC                     __end_of__initialization:
+   221  07FC  0183               	clrf	3
+   222  07FD  120A  118A  2EE3   	ljmp	_main	;jump to C main() function
+   223                           
+   224                           	psect	cstackCOMMON
+   225  0070                     __pcstackCOMMON:
+   226  0070                     ?_main:
+   227  0070                     ??_main:	
+   228                           ; 1 bytes @ 0x0
+   229                           
+   230                           
+   231                           ; 1 bytes @ 0x0
+   232  0070                     	ds	3
+   233  0073                     main@i:
+   234                           
+   235                           ; 2 bytes @ 0x3
+   236  0073                     	ds	2
+   237                           
+   238                           	psect	maintext
+   239  06E3                     __pmaintext:	
+   240 ;;
+   241 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   242 ;;
+   243 ;; *************** function _main *****************
+   244 ;; Defined at:
+   245 ;;		line 9 in file "ledbutterfly.c"
+   246 ;; Parameters:    Size  Location     Type
+   247 ;;		None
+   248 ;; Auto vars:     Size  Location     Type
+   249 ;;  i               2    3[COMMON] int 
+   250 ;; Return value:  Size  Location     Type
+   251 ;;                  1    wreg      void 
+   252 ;; Registers used:
+   253 ;;		wreg, status,2, status,0, btemp+1
+   254 ;; Tracked objects:
+   255 ;;		On entry : B00/0
+   256 ;;		On exit  : 0/0
+   257 ;;		Unchanged: 0/0
+   258 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   259 ;;      Params:         0       0       0       0       0
+   260 ;;      Locals:         2       0       0       0       0
+   261 ;;      Temps:          3       0       0       0       0
+   262 ;;      Totals:         5       0       0       0       0
+   263 ;;Total ram usage:        5 bytes
+   264 ;; This function calls:
+   265 ;;		Nothing
+   266 ;; This function is called by:
+   267 ;;		Startup code after reset
+   268 ;; This function uses a non-reentrant model
+   269 ;;
+   270                           
+   271                           
+   272                           ;psect for function _main
+   273  06E3                     _main:
+   274  06E3                     l631:	
+   275                           ;incstack = 0
+   276                           ; Regs used in _main: [wreg+status,2+status,0+btemp+1]
+   277                           
+   278                           
+   279                           ;ledbutterfly.c: 11:     TRISA=0x00;
+   280  06E3  1683               	bsf	3,5	;RP0=1, select bank1
+   281  06E4  1303               	bcf	3,6	;RP1=0, select bank1
+   282  06E5  0185               	clrf	5	;volatile
+   283                           
+   284                           ;ledbutterfly.c: 12:     PORTA=0x00;
+   285  06E6  1283               	bcf	3,5	;RP0=0, select bank0
+   286  06E7  1303               	bcf	3,6	;RP1=0, select bank0
+   287  06E8  0185               	clrf	5	;volatile
+   288                           
+   289                           ;ledbutterfly.c: 13:     TRISB=0x00;
+   290  06E9  1683               	bsf	3,5	;RP0=1, select bank1
+   291  06EA  1303               	bcf	3,6	;RP1=0, select bank1
+   292  06EB  0186               	clrf	6	;volatile
+   293                           
+   294                           ;ledbutterfly.c: 14:     PORTB=0x00;
+   295  06EC  1283               	bcf	3,5	;RP0=0, select bank0
+   296  06ED  1303               	bcf	3,6	;RP1=0, select bank0
+   297  06EE  0186               	clrf	6	;volatile
+   298                           
+   299                           ;ledbutterfly.c: 15:     TRISC=0x00;
+   300  06EF  1683               	bsf	3,5	;RP0=1, select bank1
+   301  06F0  1303               	bcf	3,6	;RP1=0, select bank1
+   302  06F1  0187               	clrf	7	;volatile
+   303                           
+   304                           ;ledbutterfly.c: 16:     PORTC=0x00;
+   305  06F2  1283               	bcf	3,5	;RP0=0, select bank0
+   306  06F3  1303               	bcf	3,6	;RP1=0, select bank0
+   307  06F4  0187               	clrf	7	;volatile
+   308                           
+   309                           ;ledbutterfly.c: 17:     TRISD=0x00;
+   310  06F5  1683               	bsf	3,5	;RP0=1, select bank1
+   311  06F6  1303               	bcf	3,6	;RP1=0, select bank1
+   312  06F7  0188               	clrf	8	;volatile
+   313                           
+   314                           ;ledbutterfly.c: 18:     PORTD=0x00;
+   315  06F8  1283               	bcf	3,5	;RP0=0, select bank0
+   316  06F9  1303               	bcf	3,6	;RP1=0, select bank0
+   317  06FA  0188               	clrf	8	;volatile
+   318                           
+   319                           ;ledbutterfly.c: 19:     TRISE=0x00;
+   320  06FB  1683               	bsf	3,5	;RP0=1, select bank1
+   321  06FC  1303               	bcf	3,6	;RP1=0, select bank1
+   322  06FD  0189               	clrf	9	;volatile
+   323                           
+   324                           ;ledbutterfly.c: 20:     PORTE=0x00;
+   325  06FE  1283               	bcf	3,5	;RP0=0, select bank0
+   326  06FF  1303               	bcf	3,6	;RP1=0, select bank0
+   327  0700  0189               	clrf	9	;volatile
+   328                           
+   329                           ;ledbutterfly.c: 21:     ANSEL=0x00;
+   330  0701  1683               	bsf	3,5	;RP0=1, select bank3
+   331  0702  1703               	bsf	3,6	;RP1=1, select bank3
+   332  0703  0188               	clrf	8	;volatile
+   333                           
+   334                           ;ledbutterfly.c: 22:     ANSELH=0x00;
+   335  0704  0189               	clrf	9	;volatile
+   336                           
+   337                           ;ledbutterfly.c: 23:     int i;;ledbutterfly.c: 24:     for (i=0;i<8;i=i+1)
+   338  0705  01F3               	clrf	main@i
+   339  0706  01F4               	clrf	main@i+1
+   340  0707                     l637:
+   341                           
+   342                           ;ledbutterfly.c: 25:     {;ledbutterfly.c: 26:         PORTA|=1<<i;
+   343  0707  3001               	movlw	1
+   344  0708  00F0               	movwf	??_main
+   345  0709  0A73               	incf	main@i,w
+   346  070A  2F0D               	goto	u14
+   347  070B                     u15:
+   348  070B  1003               	clrc
+   349  070C  0DF0               	rlf	??_main,f
+   350  070D                     u14:
+   351  070D  3EFF               	addlw	-1
+   352  070E  1D03               	skipz
+   353  070F  2F0B               	goto	u15
+   354  0710  0870               	movf	??_main,w
+   355  0711  00F1               	movwf	??_main+1
+   356  0712  0871               	movf	??_main+1,w
+   357  0713  1283               	bcf	3,5	;RP0=0, select bank0
+   358  0714  1303               	bcf	3,6	;RP1=0, select bank0
+   359  0715  0485               	iorwf	5,f	;volatile
+   360                           
+   361                           ;ledbutterfly.c: 27:         PORTC|=1<<i;
+   362  0716  3001               	movlw	1
+   363  0717  00F0               	movwf	??_main
+   364  0718  0A73               	incf	main@i,w
+   365  0719  2F1C               	goto	u24
+   366  071A                     u25:
+   367  071A  1003               	clrc
+   368  071B  0DF0               	rlf	??_main,f
+   369  071C                     u24:
+   370  071C  3EFF               	addlw	-1
+   371  071D  1D03               	skipz
+   372  071E  2F1A               	goto	u25
+   373  071F  0870               	movf	??_main,w
+   374  0720  00F1               	movwf	??_main+1
+   375  0721  0871               	movf	??_main+1,w
+   376  0722  0487               	iorwf	7,f	;volatile
+   377  0723                     l639:
+   378                           
+   379                           ;ledbutterfly.c: 28:         _delay((unsigned long)((3000)*(400000/4000.0)));
+   380  0723  3002               	movlw	2
+   381  0724  00F2               	movwf	??_main+2
+   382  0725  3086               	movlw	134
+   383  0726  00F1               	movwf	??_main+1
+   384  0727  3099               	movlw	153
+   385  0728  00F0               	movwf	??_main
+   386  0729                     u137:
+   387  0729  0BF0               	decfsz	??_main,f
+   388  072A  2F29               	goto	u137
+   389  072B  0BF1               	decfsz	??_main+1,f
+   390  072C  2F29               	goto	u137
+   391  072D  0BF2               	decfsz	??_main+2,f
+   392  072E  2F29               	goto	u137
+   393  072F                     l641:
+   394                           
+   395                           ;ledbutterfly.c: 29:     }
+   396  072F  0873               	movf	main@i,w
+   397  0730  3E01               	addlw	1
+   398  0731  00F3               	movwf	main@i
+   399  0732  0874               	movf	main@i+1,w
+   400  0733  1803               	skipnc
+   401  0734  3E01               	addlw	1
+   402  0735  3E00               	addlw	0
+   403  0736  00F4               	movwf	main@i+1
+   404  0737                     l643:
+   405  0737  0874               	movf	main@i+1,w
+   406  0738  3A80               	xorlw	128
+   407  0739  00FF               	movwf	btemp+1
+   408  073A  3080               	movlw	128
+   409  073B  027F               	subwf	btemp+1,w
+   410  073C  1D03               	skipz
+   411  073D  2F40               	goto	u35
+   412  073E  3008               	movlw	8
+   413  073F  0273               	subwf	main@i,w
+   414  0740                     u35:
+   415  0740  1C03               	skipc
+   416  0741  2F43               	goto	u31
+   417  0742  2F44               	goto	u30
+   418  0743                     u31:
+   419  0743  2F07               	goto	l637
+   420  0744                     u30:
+   421  0744                     l645:
+   422                           
+   423                           ;ledbutterfly.c: 30:     for(i=7;i>=0;i=i-1)
+   424  0744  3007               	movlw	7
+   425  0745  00F3               	movwf	main@i
+   426  0746  3000               	movlw	0
+   427  0747  00F4               	movwf	main@i+1
+   428  0748                     l651:
+   429                           
+   430                           ;ledbutterfly.c: 31:     {;ledbutterfly.c: 32:         PORTA&=~(1<<i);
+   431  0748  3001               	movlw	1
+   432  0749  00F0               	movwf	??_main
+   433  074A  0A73               	incf	main@i,w
+   434  074B  2F4E               	goto	u44
+   435  074C                     u45:
+   436  074C  1003               	clrc
+   437  074D  0DF0               	rlf	??_main,f
+   438  074E                     u44:
+   439  074E  3EFF               	addlw	-1
+   440  074F  1D03               	skipz
+   441  0750  2F4C               	goto	u45
+   442  0751  0870               	movf	??_main,w
+   443  0752  3AFF               	xorlw	255
+   444  0753  00F1               	movwf	??_main+1
+   445  0754  0871               	movf	??_main+1,w
+   446  0755  1283               	bcf	3,5	;RP0=0, select bank0
+   447  0756  1303               	bcf	3,6	;RP1=0, select bank0
+   448  0757  0585               	andwf	5,f	;volatile
+   449                           
+   450                           ;ledbutterfly.c: 33:         PORTC&=~(1<<i);
+   451  0758  3001               	movlw	1
+   452  0759  00F0               	movwf	??_main
+   453  075A  0A73               	incf	main@i,w
+   454  075B  2F5E               	goto	u54
+   455  075C                     u55:
+   456  075C  1003               	clrc
+   457  075D  0DF0               	rlf	??_main,f
+   458  075E                     u54:
+   459  075E  3EFF               	addlw	-1
+   460  075F  1D03               	skipz
+   461  0760  2F5C               	goto	u55
+   462  0761  0870               	movf	??_main,w
+   463  0762  3AFF               	xorlw	255
+   464  0763  00F1               	movwf	??_main+1
+   465  0764  0871               	movf	??_main+1,w
+   466  0765  0587               	andwf	7,f	;volatile
+   467  0766                     l653:
+   468                           
+   469                           ;ledbutterfly.c: 34:        _delay((unsigned long)((3000)*(400000/4000.0)));
+   470  0766  3002               	movlw	2
+   471  0767  00F2               	movwf	??_main+2
+   472  0768  3086               	movlw	134
+   473  0769  00F1               	movwf	??_main+1
+   474  076A  3099               	movlw	153
+   475  076B  00F0               	movwf	??_main
+   476  076C                     u147:
+   477  076C  0BF0               	decfsz	??_main,f
+   478  076D  2F6C               	goto	u147
+   479  076E  0BF1               	decfsz	??_main+1,f
+   480  076F  2F6C               	goto	u147
+   481  0770  0BF2               	decfsz	??_main+2,f
+   482  0771  2F6C               	goto	u147
+   483  0772                     l655:
+   484                           
+   485                           ;ledbutterfly.c: 35:     }
+   486  0772  0873               	movf	main@i,w
+   487  0773  3EFF               	addlw	255
+   488  0774  00F3               	movwf	main@i
+   489  0775  0874               	movf	main@i+1,w
+   490  0776  1803               	skipnc
+   491  0777  3E01               	addlw	1
+   492  0778  3EFF               	addlw	255
+   493  0779  00F4               	movwf	main@i+1
+   494  077A                     l657:
+   495  077A  1FF4               	btfss	main@i+1,7
+   496  077B  2F7D               	goto	u61
+   497  077C  2F7E               	goto	u60
+   498  077D                     u61:
+   499  077D  2F48               	goto	l651
+   500  077E                     u60:
+   501  077E                     l659:
+   502                           
+   503                           ;ledbutterfly.c: 37:     for (i=0;i<8;i=i+1)
+   504  077E  01F3               	clrf	main@i
+   505  077F  01F4               	clrf	main@i+1
+   506  0780                     l665:
+   507                           
+   508                           ;ledbutterfly.c: 38:     {;ledbutterfly.c: 39:         PORTB|=1<<i;
+   509  0780  3001               	movlw	1
+   510  0781  00F0               	movwf	??_main
+   511  0782  0A73               	incf	main@i,w
+   512  0783  2F86               	goto	u74
+   513  0784                     u75:
+   514  0784  1003               	clrc
+   515  0785  0DF0               	rlf	??_main,f
+   516  0786                     u74:
+   517  0786  3EFF               	addlw	-1
+   518  0787  1D03               	skipz
+   519  0788  2F84               	goto	u75
+   520  0789  0870               	movf	??_main,w
+   521  078A  00F1               	movwf	??_main+1
+   522  078B  0871               	movf	??_main+1,w
+   523  078C  1283               	bcf	3,5	;RP0=0, select bank0
+   524  078D  1303               	bcf	3,6	;RP1=0, select bank0
+   525  078E  0486               	iorwf	6,f	;volatile
+   526                           
+   527                           ;ledbutterfly.c: 40:         PORTD|=1<<i;
+   528  078F  3001               	movlw	1
+   529  0790  00F0               	movwf	??_main
+   530  0791  0A73               	incf	main@i,w
+   531  0792  2F95               	goto	u84
+   532  0793                     u85:
+   533  0793  1003               	clrc
+   534  0794  0DF0               	rlf	??_main,f
+   535  0795                     u84:
+   536  0795  3EFF               	addlw	-1
+   537  0796  1D03               	skipz
+   538  0797  2F93               	goto	u85
+   539  0798  0870               	movf	??_main,w
+   540  0799  00F1               	movwf	??_main+1
+   541  079A  0871               	movf	??_main+1,w
+   542  079B  0488               	iorwf	8,f	;volatile
+   543  079C                     l667:
+   544                           
+   545                           ;ledbutterfly.c: 41:         _delay((unsigned long)((2000)*(400000/4000.0)));
+   546  079C  3002               	movlw	2
+   547  079D  00F2               	movwf	??_main+2
+   548  079E  3004               	movlw	4
+   549  079F  00F1               	movwf	??_main+1
+   550  07A0  30BA               	movlw	186
+   551  07A1  00F0               	movwf	??_main
+   552  07A2                     u157:
+   553  07A2  0BF0               	decfsz	??_main,f
+   554  07A3  2FA2               	goto	u157
+   555  07A4  0BF1               	decfsz	??_main+1,f
+   556  07A5  2FA2               	goto	u157
+   557  07A6  0BF2               	decfsz	??_main+2,f
+   558  07A7  2FA2               	goto	u157
+   559  07A8  0000               	nop
+   560  07A9                     l669:
+   561                           
+   562                           ;ledbutterfly.c: 42:     }
+   563  07A9  0873               	movf	main@i,w
+   564  07AA  3E01               	addlw	1
+   565  07AB  00F3               	movwf	main@i
+   566  07AC  0874               	movf	main@i+1,w
+   567  07AD  1803               	skipnc
+   568  07AE  3E01               	addlw	1
+   569  07AF  3E00               	addlw	0
+   570  07B0  00F4               	movwf	main@i+1
+   571  07B1                     l671:
+   572  07B1  0874               	movf	main@i+1,w
+   573  07B2  3A80               	xorlw	128
+   574  07B3  00FF               	movwf	btemp+1
+   575  07B4  3080               	movlw	128
+   576  07B5  027F               	subwf	btemp+1,w
+   577  07B6  1D03               	skipz
+   578  07B7  2FBA               	goto	u95
+   579  07B8  3008               	movlw	8
+   580  07B9  0273               	subwf	main@i,w
+   581  07BA                     u95:
+   582  07BA  1C03               	skipc
+   583  07BB  2FBD               	goto	u91
+   584  07BC  2FBE               	goto	u90
+   585  07BD                     u91:
+   586  07BD  2F80               	goto	l665
+   587  07BE                     u90:
+   588  07BE                     l673:
+   589                           
+   590                           ;ledbutterfly.c: 43:     for(i=7;i>=0;i=i-1)
+   591  07BE  3007               	movlw	7
+   592  07BF  00F3               	movwf	main@i
+   593  07C0  3000               	movlw	0
+   594  07C1  00F4               	movwf	main@i+1
+   595  07C2                     l679:
+   596                           
+   597                           ;ledbutterfly.c: 44:     {;ledbutterfly.c: 45:         PORTB&=~(1<<i);
+   598  07C2  3001               	movlw	1
+   599  07C3  00F0               	movwf	??_main
+   600  07C4  0A73               	incf	main@i,w
+   601  07C5  2FC8               	goto	u104
+   602  07C6                     u105:
+   603  07C6  1003               	clrc
+   604  07C7  0DF0               	rlf	??_main,f
+   605  07C8                     u104:
+   606  07C8  3EFF               	addlw	-1
+   607  07C9  1D03               	skipz
+   608  07CA  2FC6               	goto	u105
+   609  07CB  0870               	movf	??_main,w
+   610  07CC  3AFF               	xorlw	255
+   611  07CD  00F1               	movwf	??_main+1
+   612  07CE  0871               	movf	??_main+1,w
+   613  07CF  1283               	bcf	3,5	;RP0=0, select bank0
+   614  07D0  1303               	bcf	3,6	;RP1=0, select bank0
+   615  07D1  0586               	andwf	6,f	;volatile
+   616                           
+   617                           ;ledbutterfly.c: 46:         PORTD&=~(1<<i);
+   618  07D2  3001               	movlw	1
+   619  07D3  00F0               	movwf	??_main
+   620  07D4  0A73               	incf	main@i,w
+   621  07D5  2FD8               	goto	u114
+   622  07D6                     u115:
+   623  07D6  1003               	clrc
+   624  07D7  0DF0               	rlf	??_main,f
+   625  07D8                     u114:
+   626  07D8  3EFF               	addlw	-1
+   627  07D9  1D03               	skipz
+   628  07DA  2FD6               	goto	u115
+   629  07DB  0870               	movf	??_main,w
+   630  07DC  3AFF               	xorlw	255
+   631  07DD  00F1               	movwf	??_main+1
+   632  07DE  0871               	movf	??_main+1,w
+   633  07DF  0588               	andwf	8,f	;volatile
+   634  07E0                     l681:
+   635                           
+   636                           ;ledbutterfly.c: 47:        _delay((unsigned long)((2000)*(400000/4000.0)));
+   637  07E0  3002               	movlw	2
+   638  07E1  00F2               	movwf	??_main+2
+   639  07E2  3004               	movlw	4
+   640  07E3  00F1               	movwf	??_main+1
+   641  07E4  30BA               	movlw	186
+   642  07E5  00F0               	movwf	??_main
+   643  07E6                     u167:
+   644  07E6  0BF0               	decfsz	??_main,f
+   645  07E7  2FE6               	goto	u167
+   646  07E8  0BF1               	decfsz	??_main+1,f
+   647  07E9  2FE6               	goto	u167
+   648  07EA  0BF2               	decfsz	??_main+2,f
+   649  07EB  2FE6               	goto	u167
+   650  07EC  0000               	nop
+   651  07ED                     l683:
+   652                           
+   653                           ;ledbutterfly.c: 48:     }
+   654  07ED  0873               	movf	main@i,w
+   655  07EE  3EFF               	addlw	255
+   656  07EF  00F3               	movwf	main@i
+   657  07F0  0874               	movf	main@i+1,w
+   658  07F1  1803               	skipnc
+   659  07F2  3E01               	addlw	1
+   660  07F3  3EFF               	addlw	255
+   661  07F4  00F4               	movwf	main@i+1
+   662  07F5                     l685:
+   663  07F5  1FF4               	btfss	main@i+1,7
+   664  07F6  2FF8               	goto	u121
+   665  07F7  2FF9               	goto	u120
+   666  07F8                     u121:
+   667  07F8  2FC2               	goto	l679
+   668  07F9                     u120:
+   669  07F9                     l39:
+   670  07F9  120A  118A  2800   	ljmp	start
+   671  07FC                     __end_of_main:
+   672  007E                     btemp	set	126	;btemp
+   673  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      5       5
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 5     5      0     300
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      5       5       1       35.7%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Sat Mar 04 14:46:06 2023
+
+                     l39 07F9                       u30 0744                       u14 070D  
+                     u31 0743                       u15 070B                       u24 071C  
+                     u25 071A                       u35 0740                       u60 077E  
+                     u44 074E                       u61 077D                       u45 074C  
+                     u54 075E                       u55 075C                       u90 07BE  
+                     u74 0786                       u91 07BD                       u75 0784  
+                     u84 0795                       u85 0793                       u95 07BA  
+                    l631 06E3                      l641 072F                      l651 0748  
+                    l643 0737                      l653 0766                      l645 0744  
+                    l637 0707                      l671 07B1                      l655 0772  
+                    l639 0723                      l681 07E0                      l673 07BE  
+                    l665 0780                      l657 077A                      l683 07ED  
+                    l667 079C                      l659 077E                      l685 07F5  
+                    l669 07A9                      l679 07C2                      u120 07F9  
+                    u104 07C8                      u121 07F8                      u105 07C6  
+                    u114 07D8                      u115 07D6                      u137 0729  
+                    u147 076C                      u157 07A2                      u167 07E6  
+                   _main 06E3                     btemp 007E                     start 0000  
+                  ?_main 0070                    _ANSEL 0188                    _PORTA 0005  
+                  _PORTB 0006                    _PORTC 0007                    _PORTD 0008  
+                  _PORTE 0009                    _TRISA 0085                    _TRISB 0086  
+                  _TRISC 0087                    _TRISD 0088                    _TRISE 0089  
+                  main@i 0073                    status 0003                    wtemp0 007E  
+        __initialization 07FC             __end_of_main 07FC                   ??_main 0070  
+                 _ANSELH 0189  __end_of__initialization 07FC           __pcstackCOMMON 0070  
+             __pmaintext 06E3     end_of_initialization 07FC      start_initialization 07FC  
+              ___latbits 0002            __size_of_main 0119  

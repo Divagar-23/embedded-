@@ -1,0 +1,836 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Fri Mar 10 12:36:08 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	maintext,global,class=CODE,split=1,delta=2
+     7                           	psect	text1,local,class=CODE,merge=1,delta=2
+     8                           	psect	text2,local,class=CODE,merge=1,delta=2
+     9                           	psect	text3,local,class=CODE,merge=1,delta=2
+    10                           	psect	text4,local,class=CODE,merge=1,delta=2
+    11                           	psect	text5,local,class=CODE,merge=1,delta=2
+    12                           	dabs	1,0x7E,2
+    13  0000                     
+    14                           ; Version 2.20
+    15                           ; Generated 12/02/2020 GMT
+    16                           ; 
+    17                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    18                           ; All rights reserved.
+    19                           ; 
+    20                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    21                           ; 
+    22                           ; Redistribution and use in source and binary forms, with or without modification, are
+    23                           ; permitted provided that the following conditions are met:
+    24                           ; 
+    25                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    26                           ;        conditions and the following disclaimer.
+    27                           ; 
+    28                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    29                           ;        of conditions and the following disclaimer in the documentation and/or other
+    30                           ;        materials provided with the distribution.
+    31                           ; 
+    32                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    33                           ;        software without specific prior written permission.
+    34                           ; 
+    35                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    36                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    37                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    38                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    39                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    40                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    41                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    42                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    43                           ; 
+    44                           ; 
+    45                           ; Code-generator required, PIC16F887 Definitions
+    46                           ; 
+    47                           ; SFR Addresses
+    48  0000                     	;# 
+    49  0001                     	;# 
+    50  0002                     	;# 
+    51  0003                     	;# 
+    52  0004                     	;# 
+    53  0005                     	;# 
+    54  0006                     	;# 
+    55  0007                     	;# 
+    56  0008                     	;# 
+    57  0009                     	;# 
+    58  000A                     	;# 
+    59  000B                     	;# 
+    60  000C                     	;# 
+    61  000D                     	;# 
+    62  000E                     	;# 
+    63  000E                     	;# 
+    64  000F                     	;# 
+    65  0010                     	;# 
+    66  0011                     	;# 
+    67  0012                     	;# 
+    68  0013                     	;# 
+    69  0014                     	;# 
+    70  0015                     	;# 
+    71  0015                     	;# 
+    72  0016                     	;# 
+    73  0017                     	;# 
+    74  0018                     	;# 
+    75  0019                     	;# 
+    76  001A                     	;# 
+    77  001B                     	;# 
+    78  001B                     	;# 
+    79  001C                     	;# 
+    80  001D                     	;# 
+    81  001E                     	;# 
+    82  001F                     	;# 
+    83  0081                     	;# 
+    84  0085                     	;# 
+    85  0086                     	;# 
+    86  0087                     	;# 
+    87  0088                     	;# 
+    88  0089                     	;# 
+    89  008C                     	;# 
+    90  008D                     	;# 
+    91  008E                     	;# 
+    92  008F                     	;# 
+    93  0090                     	;# 
+    94  0091                     	;# 
+    95  0092                     	;# 
+    96  0093                     	;# 
+    97  0093                     	;# 
+    98  0093                     	;# 
+    99  0094                     	;# 
+   100  0095                     	;# 
+   101  0096                     	;# 
+   102  0097                     	;# 
+   103  0098                     	;# 
+   104  0099                     	;# 
+   105  009A                     	;# 
+   106  009B                     	;# 
+   107  009C                     	;# 
+   108  009D                     	;# 
+   109  009E                     	;# 
+   110  009F                     	;# 
+   111  0105                     	;# 
+   112  0107                     	;# 
+   113  0108                     	;# 
+   114  0109                     	;# 
+   115  010C                     	;# 
+   116  010C                     	;# 
+   117  010D                     	;# 
+   118  010E                     	;# 
+   119  010F                     	;# 
+   120  0185                     	;# 
+   121  0187                     	;# 
+   122  0188                     	;# 
+   123  0189                     	;# 
+   124  018C                     	;# 
+   125  018D                     	;# 
+   126  0000                     	;# 
+   127  0001                     	;# 
+   128  0002                     	;# 
+   129  0003                     	;# 
+   130  0004                     	;# 
+   131  0005                     	;# 
+   132  0006                     	;# 
+   133  0007                     	;# 
+   134  0008                     	;# 
+   135  0009                     	;# 
+   136  000A                     	;# 
+   137  000B                     	;# 
+   138  000C                     	;# 
+   139  000D                     	;# 
+   140  000E                     	;# 
+   141  000E                     	;# 
+   142  000F                     	;# 
+   143  0010                     	;# 
+   144  0011                     	;# 
+   145  0012                     	;# 
+   146  0013                     	;# 
+   147  0014                     	;# 
+   148  0015                     	;# 
+   149  0015                     	;# 
+   150  0016                     	;# 
+   151  0017                     	;# 
+   152  0018                     	;# 
+   153  0019                     	;# 
+   154  001A                     	;# 
+   155  001B                     	;# 
+   156  001B                     	;# 
+   157  001C                     	;# 
+   158  001D                     	;# 
+   159  001E                     	;# 
+   160  001F                     	;# 
+   161  0081                     	;# 
+   162  0085                     	;# 
+   163  0086                     	;# 
+   164  0087                     	;# 
+   165  0088                     	;# 
+   166  0089                     	;# 
+   167  008C                     	;# 
+   168  008D                     	;# 
+   169  008E                     	;# 
+   170  008F                     	;# 
+   171  0090                     	;# 
+   172  0091                     	;# 
+   173  0092                     	;# 
+   174  0093                     	;# 
+   175  0093                     	;# 
+   176  0093                     	;# 
+   177  0094                     	;# 
+   178  0095                     	;# 
+   179  0096                     	;# 
+   180  0097                     	;# 
+   181  0098                     	;# 
+   182  0099                     	;# 
+   183  009A                     	;# 
+   184  009B                     	;# 
+   185  009C                     	;# 
+   186  009D                     	;# 
+   187  009E                     	;# 
+   188  009F                     	;# 
+   189  0105                     	;# 
+   190  0107                     	;# 
+   191  0108                     	;# 
+   192  0109                     	;# 
+   193  010C                     	;# 
+   194  010C                     	;# 
+   195  010D                     	;# 
+   196  010E                     	;# 
+   197  010F                     	;# 
+   198  0185                     	;# 
+   199  0187                     	;# 
+   200  0188                     	;# 
+   201  0189                     	;# 
+   202  018C                     	;# 
+   203  018D                     	;# 
+   204  0008                     _PORTD	set	8
+   205  0005                     _PORTA	set	5
+   206  0046                     _RD6	set	70
+   207  0045                     _RD5	set	69
+   208  0047                     _RD7	set	71
+   209  0088                     _TRISD	set	136
+   210  0085                     _TRISA	set	133
+   211  0189                     _ANSELH	set	393
+   212  0188                     _ANSEL	set	392
+   213                           
+   214                           	psect	cinit
+   215  07FC                     start_initialization:	
+   216                           ; #config settings
+   217                           
+   218  07FC                     __initialization:
+   219  07FC                     end_of_initialization:	
+   220                           ;End of C runtime variable initialization code
+   221                           
+   222  07FC                     __end_of__initialization:
+   223  07FC  0183               	clrf	3
+   224  07FD  120A  118A  2FD4   	ljmp	_main	;jump to C main() function
+   225                           
+   226                           	psect	cstackCOMMON
+   227  0070                     __pcstackCOMMON:
+   228  0070                     ?_type:
+   229  0070                     ?_on:	
+   230                           ; 1 bytes @ 0x0
+   231                           
+   232  0070                     ?_address:	
+   233                           ; 1 bytes @ 0x0
+   234                           
+   235  0070                     ?_display:	
+   236                           ; 1 bytes @ 0x0
+   237                           
+   238  0070                     ??_pulse:	
+   239                           ; 1 bytes @ 0x0
+   240                           
+   241  0070                     ?_main:	
+   242                           ; 1 bytes @ 0x0
+   243                           
+   244  0070                     ?_pulse:	
+   245                           ; 1 bytes @ 0x0
+   246                           
+   247                           
+   248                           ; 2 bytes @ 0x0
+   249  0070                     	ds	2
+   250  0072                     ??_type:
+   251  0072                     ??_on:	
+   252                           ; 1 bytes @ 0x2
+   253                           
+   254  0072                     ??_address:	
+   255                           ; 1 bytes @ 0x2
+   256                           
+   257  0072                     ??_display:	
+   258                           ; 1 bytes @ 0x2
+   259                           
+   260  0072                     ??_main:	
+   261                           ; 1 bytes @ 0x2
+   262                           
+   263                           
+   264                           	psect	maintext
+   265  07D4                     __pmaintext:	
+   266                           ; 1 bytes @ 0x2
+   267 ;;
+   268 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   269 ;;
+   270 ;; *************** function _main *****************
+   271 ;; Defined at:
+   272 ;;		line 22 in file "numlcd.c"
+   273 ;; Parameters:    Size  Location     Type
+   274 ;;		None
+   275 ;; Auto vars:     Size  Location     Type
+   276 ;;		None
+   277 ;; Return value:  Size  Location     Type
+   278 ;;                  1    wreg      void 
+   279 ;; Registers used:
+   280 ;;		wreg, status,2, status,0, pclath, cstack
+   281 ;; Tracked objects:
+   282 ;;		On entry : B00/0
+   283 ;;		On exit  : 0/0
+   284 ;;		Unchanged: 0/0
+   285 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   286 ;;      Params:         0       0       0       0       0
+   287 ;;      Locals:         0       0       0       0       0
+   288 ;;      Temps:          0       0       0       0       0
+   289 ;;      Totals:         0       0       0       0       0
+   290 ;;Total ram usage:        0 bytes
+   291 ;; Hardware stack levels required when called: 2
+   292 ;; This function calls:
+   293 ;;		_address
+   294 ;;		_display
+   295 ;;		_on
+   296 ;;		_type
+   297 ;; This function is called by:
+   298 ;;		Startup code after reset
+   299 ;; This function uses a non-reentrant model
+   300 ;;
+   301                           
+   302                           
+   303                           ;psect for function _main
+   304  07D4                     _main:
+   305  07D4                     l673:	
+   306                           ;incstack = 0
+   307                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   308                           
+   309                           
+   310                           ;numlcd.c: 24:     TRISA=0x00;
+   311  07D4  1683               	bsf	3,5	;RP0=1, select bank1
+   312  07D5  1303               	bcf	3,6	;RP1=0, select bank1
+   313  07D6  0185               	clrf	5	;volatile
+   314                           
+   315                           ;numlcd.c: 25:     PORTA=0x00;
+   316  07D7  1283               	bcf	3,5	;RP0=0, select bank0
+   317  07D8  1303               	bcf	3,6	;RP1=0, select bank0
+   318  07D9  0185               	clrf	5	;volatile
+   319                           
+   320                           ;numlcd.c: 26:     TRISD=0x00;
+   321  07DA  1683               	bsf	3,5	;RP0=1, select bank1
+   322  07DB  1303               	bcf	3,6	;RP1=0, select bank1
+   323  07DC  0188               	clrf	8	;volatile
+   324                           
+   325                           ;numlcd.c: 27:     PORTD=0x00;
+   326  07DD  1283               	bcf	3,5	;RP0=0, select bank0
+   327  07DE  1303               	bcf	3,6	;RP1=0, select bank0
+   328  07DF  0188               	clrf	8	;volatile
+   329                           
+   330                           ;numlcd.c: 28:     ANSEL=0x00;
+   331  07E0  1683               	bsf	3,5	;RP0=1, select bank3
+   332  07E1  1703               	bsf	3,6	;RP1=1, select bank3
+   333  07E2  0188               	clrf	8	;volatile
+   334                           
+   335                           ;numlcd.c: 29:     ANSELH=0x00;
+   336  07E3  0189               	clrf	9	;volatile
+   337  07E4                     l675:
+   338                           
+   339                           ;numlcd.c: 31:     {;numlcd.c: 32:     type();
+   340  07E4  120A  118A  27AF  120A  118A  	fcall	_type
+   341  07E9                     l677:
+   342                           
+   343                           ;numlcd.c: 33:     on();
+   344  07E9  120A  118A  27A3  120A  118A  	fcall	_on
+   345  07EE                     l679:
+   346                           
+   347                           ;numlcd.c: 34:     address();
+   348  07EE  120A  118A  278B  120A  118A  	fcall	_address
+   349  07F3                     l681:
+   350                           
+   351                           ;numlcd.c: 35:     display();
+   352  07F3  120A  118A  2797  120A  118A  	fcall	_display
+   353  07F8  2FE4               	goto	l675
+   354  07F9  120A  118A  2800   	ljmp	start
+   355  07FC                     __end_of_main:
+   356                           
+   357                           	psect	text1
+   358  07AF                     __ptext1:	
+   359 ;; *************** function _type *****************
+   360 ;; Defined at:
+   361 ;;		line 38 in file "numlcd.c"
+   362 ;; Parameters:    Size  Location     Type
+   363 ;;		None
+   364 ;; Auto vars:     Size  Location     Type
+   365 ;;		None
+   366 ;; Return value:  Size  Location     Type
+   367 ;;                  1    wreg      void 
+   368 ;; Registers used:
+   369 ;;		wreg, status,2, status,0, pclath, cstack
+   370 ;; Tracked objects:
+   371 ;;		On entry : 0/0
+   372 ;;		On exit  : 0/0
+   373 ;;		Unchanged: 0/0
+   374 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   375 ;;      Params:         0       0       0       0       0
+   376 ;;      Locals:         0       0       0       0       0
+   377 ;;      Temps:          0       0       0       0       0
+   378 ;;      Totals:         0       0       0       0       0
+   379 ;;Total ram usage:        0 bytes
+   380 ;; Hardware stack levels used: 1
+   381 ;; Hardware stack levels required when called: 1
+   382 ;; This function calls:
+   383 ;;		_pulse
+   384 ;; This function is called by:
+   385 ;;		_main
+   386 ;; This function uses a non-reentrant model
+   387 ;;
+   388                           
+   389                           
+   390                           ;psect for function _type
+   391  07AF                     _type:
+   392  07AF                     l649:	
+   393                           ;incstack = 0
+   394                           ; Regs used in _type: [wreg+status,2+status,0+pclath+cstack]
+   395                           
+   396                           
+   397                           ;numlcd.c: 40:     RD5=0;
+   398  07AF  1283               	bcf	3,5	;RP0=0, select bank0
+   399  07B0  1303               	bcf	3,6	;RP1=0, select bank0
+   400  07B1  1288               	bcf	8,5	;volatile
+   401                           
+   402                           ;numlcd.c: 41:     RD6=0;
+   403  07B2  1308               	bcf	8,6	;volatile
+   404  07B3                     l651:
+   405                           
+   406                           ;numlcd.c: 42:     PORTA=0x38;
+   407  07B3  3038               	movlw	56
+   408  07B4  0085               	movwf	5	;volatile
+   409  07B5                     l653:
+   410                           
+   411                           ;numlcd.c: 43:     pulse();
+   412  07B5  120A  118A  27BB  120A  118A  	fcall	_pulse
+   413  07BA                     l42:
+   414  07BA  0008               	return
+   415  07BB                     __end_of_type:
+   416                           
+   417                           	psect	text2
+   418  07A3                     __ptext2:	
+   419 ;; *************** function _on *****************
+   420 ;; Defined at:
+   421 ;;		line 45 in file "numlcd.c"
+   422 ;; Parameters:    Size  Location     Type
+   423 ;;		None
+   424 ;; Auto vars:     Size  Location     Type
+   425 ;;		None
+   426 ;; Return value:  Size  Location     Type
+   427 ;;                  1    wreg      void 
+   428 ;; Registers used:
+   429 ;;		wreg, status,2, status,0, pclath, cstack
+   430 ;; Tracked objects:
+   431 ;;		On entry : 0/0
+   432 ;;		On exit  : 0/0
+   433 ;;		Unchanged: 0/0
+   434 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   435 ;;      Params:         0       0       0       0       0
+   436 ;;      Locals:         0       0       0       0       0
+   437 ;;      Temps:          0       0       0       0       0
+   438 ;;      Totals:         0       0       0       0       0
+   439 ;;Total ram usage:        0 bytes
+   440 ;; Hardware stack levels used: 1
+   441 ;; Hardware stack levels required when called: 1
+   442 ;; This function calls:
+   443 ;;		_pulse
+   444 ;; This function is called by:
+   445 ;;		_main
+   446 ;; This function uses a non-reentrant model
+   447 ;;
+   448                           
+   449                           
+   450                           ;psect for function _on
+   451  07A3                     _on:
+   452  07A3                     l655:	
+   453                           ;incstack = 0
+   454                           ; Regs used in _on: [wreg+status,2+status,0+pclath+cstack]
+   455                           
+   456                           
+   457                           ;numlcd.c: 47:     RD5=0;
+   458  07A3  1283               	bcf	3,5	;RP0=0, select bank0
+   459  07A4  1303               	bcf	3,6	;RP1=0, select bank0
+   460  07A5  1288               	bcf	8,5	;volatile
+   461                           
+   462                           ;numlcd.c: 48:     RD6=0;
+   463  07A6  1308               	bcf	8,6	;volatile
+   464  07A7                     l657:
+   465                           
+   466                           ;numlcd.c: 49:     PORTA=0x0E;
+   467  07A7  300E               	movlw	14
+   468  07A8  0085               	movwf	5	;volatile
+   469  07A9                     l659:
+   470                           
+   471                           ;numlcd.c: 50:     pulse();
+   472  07A9  120A  118A  27BB  120A  118A  	fcall	_pulse
+   473  07AE                     l45:
+   474  07AE  0008               	return
+   475  07AF                     __end_of_on:
+   476                           
+   477                           	psect	text3
+   478  0797                     __ptext3:	
+   479 ;; *************** function _display *****************
+   480 ;; Defined at:
+   481 ;;		line 60 in file "numlcd.c"
+   482 ;; Parameters:    Size  Location     Type
+   483 ;;		None
+   484 ;; Auto vars:     Size  Location     Type
+   485 ;;		None
+   486 ;; Return value:  Size  Location     Type
+   487 ;;                  1    wreg      void 
+   488 ;; Registers used:
+   489 ;;		wreg, status,2, status,0, pclath, cstack
+   490 ;; Tracked objects:
+   491 ;;		On entry : 0/0
+   492 ;;		On exit  : 0/0
+   493 ;;		Unchanged: 0/0
+   494 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   495 ;;      Params:         0       0       0       0       0
+   496 ;;      Locals:         0       0       0       0       0
+   497 ;;      Temps:          0       0       0       0       0
+   498 ;;      Totals:         0       0       0       0       0
+   499 ;;Total ram usage:        0 bytes
+   500 ;; Hardware stack levels used: 1
+   501 ;; Hardware stack levels required when called: 1
+   502 ;; This function calls:
+   503 ;;		_pulse
+   504 ;; This function is called by:
+   505 ;;		_main
+   506 ;; This function uses a non-reentrant model
+   507 ;;
+   508                           
+   509                           
+   510                           ;psect for function _display
+   511  0797                     _display:
+   512  0797                     l667:	
+   513                           ;incstack = 0
+   514                           ; Regs used in _display: [wreg+status,2+status,0+pclath+cstack]
+   515                           
+   516                           
+   517                           ;numlcd.c: 62:        RD5=1;
+   518  0797  1283               	bcf	3,5	;RP0=0, select bank0
+   519  0798  1303               	bcf	3,6	;RP1=0, select bank0
+   520  0799  1688               	bsf	8,5	;volatile
+   521                           
+   522                           ;numlcd.c: 63:        RD6=0;
+   523  079A  1308               	bcf	8,6	;volatile
+   524  079B                     l669:
+   525                           
+   526                           ;numlcd.c: 64:        PORTA='D';
+   527  079B  3044               	movlw	68
+   528  079C  0085               	movwf	5	;volatile
+   529  079D                     l671:
+   530                           
+   531                           ;numlcd.c: 65:        pulse();
+   532  079D  120A  118A  27BB  120A  118A  	fcall	_pulse
+   533  07A2                     l51:
+   534  07A2  0008               	return
+   535  07A3                     __end_of_display:
+   536                           
+   537                           	psect	text4
+   538  078B                     __ptext4:	
+   539 ;; *************** function _address *****************
+   540 ;; Defined at:
+   541 ;;		line 53 in file "numlcd.c"
+   542 ;; Parameters:    Size  Location     Type
+   543 ;;		None
+   544 ;; Auto vars:     Size  Location     Type
+   545 ;;		None
+   546 ;; Return value:  Size  Location     Type
+   547 ;;                  1    wreg      void 
+   548 ;; Registers used:
+   549 ;;		wreg, status,2, status,0, pclath, cstack
+   550 ;; Tracked objects:
+   551 ;;		On entry : 0/0
+   552 ;;		On exit  : 0/0
+   553 ;;		Unchanged: 0/0
+   554 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   555 ;;      Params:         0       0       0       0       0
+   556 ;;      Locals:         0       0       0       0       0
+   557 ;;      Temps:          0       0       0       0       0
+   558 ;;      Totals:         0       0       0       0       0
+   559 ;;Total ram usage:        0 bytes
+   560 ;; Hardware stack levels used: 1
+   561 ;; Hardware stack levels required when called: 1
+   562 ;; This function calls:
+   563 ;;		_pulse
+   564 ;; This function is called by:
+   565 ;;		_main
+   566 ;; This function uses a non-reentrant model
+   567 ;;
+   568                           
+   569                           
+   570                           ;psect for function _address
+   571  078B                     _address:
+   572  078B                     l661:	
+   573                           ;incstack = 0
+   574                           ; Regs used in _address: [wreg+status,2+status,0+pclath+cstack]
+   575                           
+   576                           
+   577                           ;numlcd.c: 55:          RD5=0;
+   578  078B  1283               	bcf	3,5	;RP0=0, select bank0
+   579  078C  1303               	bcf	3,6	;RP1=0, select bank0
+   580  078D  1288               	bcf	8,5	;volatile
+   581                           
+   582                           ;numlcd.c: 56:          RD6=0;
+   583  078E  1308               	bcf	8,6	;volatile
+   584  078F                     l663:
+   585                           
+   586                           ;numlcd.c: 57:          PORTA=0x80;
+   587  078F  3080               	movlw	128
+   588  0790  0085               	movwf	5	;volatile
+   589  0791                     l665:
+   590                           
+   591                           ;numlcd.c: 58:          pulse();
+   592  0791  120A  118A  27BB  120A  118A  	fcall	_pulse
+   593  0796                     l48:
+   594  0796  0008               	return
+   595  0797                     __end_of_address:
+   596                           
+   597                           	psect	text5
+   598  07BB                     __ptext5:	
+   599 ;; *************** function _pulse *****************
+   600 ;; Defined at:
+   601 ;;		line 15 in file "numlcd.c"
+   602 ;; Parameters:    Size  Location     Type
+   603 ;;		None
+   604 ;; Auto vars:     Size  Location     Type
+   605 ;;		None
+   606 ;; Return value:  Size  Location     Type
+   607 ;;                  2   30[None  ] int 
+   608 ;; Registers used:
+   609 ;;		wreg
+   610 ;; Tracked objects:
+   611 ;;		On entry : 0/0
+   612 ;;		On exit  : 0/0
+   613 ;;		Unchanged: 0/0
+   614 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   615 ;;      Params:         0       0       0       0       0
+   616 ;;      Locals:         0       0       0       0       0
+   617 ;;      Temps:          2       0       0       0       0
+   618 ;;      Totals:         2       0       0       0       0
+   619 ;;Total ram usage:        2 bytes
+   620 ;; Hardware stack levels used: 1
+   621 ;; This function calls:
+   622 ;;		Nothing
+   623 ;; This function is called by:
+   624 ;;		_type
+   625 ;;		_on
+   626 ;;		_address
+   627 ;;		_display
+   628 ;; This function uses a non-reentrant model
+   629 ;;
+   630                           
+   631                           
+   632                           ;psect for function _pulse
+   633  07BB                     _pulse:
+   634  07BB                     l643:	
+   635                           ;incstack = 0
+   636                           ; Regs used in _pulse: [wreg]
+   637                           
+   638                           
+   639                           ;numlcd.c: 17:     RD7=1;
+   640  07BB  1283               	bcf	3,5	;RP0=0, select bank0
+   641  07BC  1303               	bcf	3,6	;RP1=0, select bank0
+   642  07BD  1788               	bsf	8,7	;volatile
+   643  07BE                     l645:
+   644                           
+   645                           ;numlcd.c: 18:     _delay((unsigned long)((1000)*(400000/4000.0)));
+   646  07BE  3082               	movlw	130
+   647  07BF  00F1               	movwf	??_pulse+1
+   648  07C0  30DD               	movlw	221
+   649  07C1  00F0               	movwf	??_pulse
+   650  07C2                     u17:
+   651  07C2  0BF0               	decfsz	??_pulse,f
+   652  07C3  2FC2               	goto	u17
+   653  07C4  0BF1               	decfsz	??_pulse+1,f
+   654  07C5  2FC2               	goto	u17
+   655  07C6  2FC7               	nop2
+   656  07C7                     l647:
+   657                           
+   658                           ;numlcd.c: 19:     RD7=0;
+   659  07C7  1283               	bcf	3,5	;RP0=0, select bank0
+   660  07C8  1303               	bcf	3,6	;RP1=0, select bank0
+   661  07C9  1388               	bcf	8,7	;volatile
+   662                           
+   663                           ;numlcd.c: 20:     _delay((unsigned long)((1000)*(400000/4000.0)));
+   664  07CA  3082               	movlw	130
+   665  07CB  00F1               	movwf	??_pulse+1
+   666  07CC  30DD               	movlw	221
+   667  07CD  00F0               	movwf	??_pulse
+   668  07CE                     u27:
+   669  07CE  0BF0               	decfsz	??_pulse,f
+   670  07CF  2FCE               	goto	u27
+   671  07D0  0BF1               	decfsz	??_pulse+1,f
+   672  07D1  2FCE               	goto	u27
+   673  07D2  2FD3               	nop2
+   674  07D3                     l31:
+   675  07D3  0008               	return
+   676  07D4                     __end_of_pulse:
+   677  007E                     btemp	set	126	;btemp
+   678  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      2       2
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    _type->_pulse
+    _on->_pulse
+    _display->_pulse
+    _address->_pulse
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                            _address
+                            _display
+                                 _on
+                               _type
+ ---------------------------------------------------------------------------------
+ (1) _type                                                 0     0      0       0
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (1) _on                                                   0     0      0       0
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (1) _display                                              0     0      0       0
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (1) _address                                              0     0      0       0
+                              _pulse
+ ---------------------------------------------------------------------------------
+ (2) _pulse                                                2     2      0       0
+                                              0 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _address
+     _pulse
+   _display
+     _pulse
+   _on
+     _pulse
+   _type
+     _pulse
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      2       2       1       14.3%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Fri Mar 10 12:36:08 2023
+
+                     l31 07D3                       l42 07BA                       l51 07A2  
+                     l45 07AE                       l48 0796                       u17 07C2  
+                     u27 07CE                       _on 07A3                      ?_on 0070  
+                    l643 07BB                      l651 07B3                      l645 07BE  
+                    l661 078B                      l653 07B5                      l647 07C7  
+                    l663 078F                      l671 079D                      l655 07A3  
+                    l665 0791                      l657 07A7                      l649 07AF  
+                    l681 07F3                      l673 07D4                      l667 0797  
+                    l659 07A9                      l675 07E4                      l669 079B  
+                    l677 07E9                      l679 07EE                      _RD5 0045  
+                    _RD6 0046                      _RD7 0047                     ??_on 0072  
+                   _main 07D4                     btemp 007E                     _type 07AF  
+                   start 0000                    ?_main 0070                    _ANSEL 0188  
+                  ?_type 0070          __end_of_address 0797                    _PORTA 0005  
+                  _PORTD 0008                    _TRISA 0085                    _TRISD 0088  
+        __end_of_display 07A3                    _pulse 07BB                    status 0003  
+                  wtemp0 007E          __initialization 07FC             __end_of_main 07FC  
+           __end_of_type 07BB                   ??_main 0072                   ??_type 0072  
+                 ?_pulse 0070                   _ANSELH 0189                ??_address 0072  
+              ??_display 0072  __end_of__initialization 07FC           __pcstackCOMMON 0070  
+          __end_of_pulse 07D4               __end_of_on 07AF                  ??_pulse 0070  
+             __pmaintext 07D4                  _address 078B                  __ptext1 07AF  
+                __ptext2 07A3                  __ptext3 0797                  __ptext4 078B  
+                __ptext5 07BB                  _display 0797     end_of_initialization 07FC  
+    start_initialization 07FC                ___latbits 0002                 ?_address 0070  
+               ?_display 0070           __size_of_pulse 0019              __size_of_on 000C  
+       __size_of_address 000C         __size_of_display 000C            __size_of_main 0028  
+          __size_of_type 000C  

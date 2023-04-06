@@ -1,0 +1,1458 @@
+
+
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Wed Mar 15 10:41:39 2023
+
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+     1                           	processor	16F887
+     2                           	pagewidth 120
+     3                           	opt	flic
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1,noexec
+     6                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1,noexec
+     7                           	psect	maintext,global,class=CODE,split=1,delta=2
+     8                           	dabs	1,0x7E,2
+     9  0000                     
+    10                           ; Version 2.20
+    11                           ; Generated 12/02/2020 GMT
+    12                           ; 
+    13                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    14                           ; All rights reserved.
+    15                           ; 
+    16                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    17                           ; 
+    18                           ; Redistribution and use in source and binary forms, with or without modification, are
+    19                           ; permitted provided that the following conditions are met:
+    20                           ; 
+    21                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    22                           ;        conditions and the following disclaimer.
+    23                           ; 
+    24                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    25                           ;        of conditions and the following disclaimer in the documentation and/or other
+    26                           ;        materials provided with the distribution.
+    27                           ; 
+    28                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    29                           ;        software without specific prior written permission.
+    30                           ; 
+    31                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    32                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    33                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    34                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    35                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    36                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    37                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    38                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    39                           ; 
+    40                           ; 
+    41                           ; Code-generator required, PIC16F887 Definitions
+    42                           ; 
+    43                           ; SFR Addresses
+    44  0000                     	;# 
+    45  0001                     	;# 
+    46  0002                     	;# 
+    47  0003                     	;# 
+    48  0004                     	;# 
+    49  0005                     	;# 
+    50  0006                     	;# 
+    51  0007                     	;# 
+    52  0008                     	;# 
+    53  0009                     	;# 
+    54  000A                     	;# 
+    55  000B                     	;# 
+    56  000C                     	;# 
+    57  000D                     	;# 
+    58  000E                     	;# 
+    59  000E                     	;# 
+    60  000F                     	;# 
+    61  0010                     	;# 
+    62  0011                     	;# 
+    63  0012                     	;# 
+    64  0013                     	;# 
+    65  0014                     	;# 
+    66  0015                     	;# 
+    67  0015                     	;# 
+    68  0016                     	;# 
+    69  0017                     	;# 
+    70  0018                     	;# 
+    71  0019                     	;# 
+    72  001A                     	;# 
+    73  001B                     	;# 
+    74  001B                     	;# 
+    75  001C                     	;# 
+    76  001D                     	;# 
+    77  001E                     	;# 
+    78  001F                     	;# 
+    79  0081                     	;# 
+    80  0085                     	;# 
+    81  0086                     	;# 
+    82  0087                     	;# 
+    83  0088                     	;# 
+    84  0089                     	;# 
+    85  008C                     	;# 
+    86  008D                     	;# 
+    87  008E                     	;# 
+    88  008F                     	;# 
+    89  0090                     	;# 
+    90  0091                     	;# 
+    91  0092                     	;# 
+    92  0093                     	;# 
+    93  0093                     	;# 
+    94  0093                     	;# 
+    95  0094                     	;# 
+    96  0095                     	;# 
+    97  0096                     	;# 
+    98  0097                     	;# 
+    99  0098                     	;# 
+   100  0099                     	;# 
+   101  009A                     	;# 
+   102  009B                     	;# 
+   103  009C                     	;# 
+   104  009D                     	;# 
+   105  009E                     	;# 
+   106  009F                     	;# 
+   107  0105                     	;# 
+   108  0107                     	;# 
+   109  0108                     	;# 
+   110  0109                     	;# 
+   111  010C                     	;# 
+   112  010C                     	;# 
+   113  010D                     	;# 
+   114  010E                     	;# 
+   115  010F                     	;# 
+   116  0185                     	;# 
+   117  0187                     	;# 
+   118  0188                     	;# 
+   119  0189                     	;# 
+   120  018C                     	;# 
+   121  018D                     	;# 
+   122  0000                     	;# 
+   123  0001                     	;# 
+   124  0002                     	;# 
+   125  0003                     	;# 
+   126  0004                     	;# 
+   127  0005                     	;# 
+   128  0006                     	;# 
+   129  0007                     	;# 
+   130  0008                     	;# 
+   131  0009                     	;# 
+   132  000A                     	;# 
+   133  000B                     	;# 
+   134  000C                     	;# 
+   135  000D                     	;# 
+   136  000E                     	;# 
+   137  000E                     	;# 
+   138  000F                     	;# 
+   139  0010                     	;# 
+   140  0011                     	;# 
+   141  0012                     	;# 
+   142  0013                     	;# 
+   143  0014                     	;# 
+   144  0015                     	;# 
+   145  0015                     	;# 
+   146  0016                     	;# 
+   147  0017                     	;# 
+   148  0018                     	;# 
+   149  0019                     	;# 
+   150  001A                     	;# 
+   151  001B                     	;# 
+   152  001B                     	;# 
+   153  001C                     	;# 
+   154  001D                     	;# 
+   155  001E                     	;# 
+   156  001F                     	;# 
+   157  0081                     	;# 
+   158  0085                     	;# 
+   159  0086                     	;# 
+   160  0087                     	;# 
+   161  0088                     	;# 
+   162  0089                     	;# 
+   163  008C                     	;# 
+   164  008D                     	;# 
+   165  008E                     	;# 
+   166  008F                     	;# 
+   167  0090                     	;# 
+   168  0091                     	;# 
+   169  0092                     	;# 
+   170  0093                     	;# 
+   171  0093                     	;# 
+   172  0093                     	;# 
+   173  0094                     	;# 
+   174  0095                     	;# 
+   175  0096                     	;# 
+   176  0097                     	;# 
+   177  0098                     	;# 
+   178  0099                     	;# 
+   179  009A                     	;# 
+   180  009B                     	;# 
+   181  009C                     	;# 
+   182  009D                     	;# 
+   183  009E                     	;# 
+   184  009F                     	;# 
+   185  0105                     	;# 
+   186  0107                     	;# 
+   187  0108                     	;# 
+   188  0109                     	;# 
+   189  010C                     	;# 
+   190  010C                     	;# 
+   191  010D                     	;# 
+   192  010E                     	;# 
+   193  010F                     	;# 
+   194  0185                     	;# 
+   195  0187                     	;# 
+   196  0188                     	;# 
+   197  0189                     	;# 
+   198  018C                     	;# 
+   199  018D                     	;# 
+   200  0008                     _PORTD	set	8
+   201  0007                     _PORTC	set	7
+   202  0005                     _PORTA	set	5
+   203  0047                     _RD7	set	71
+   204  0046                     _RD6	set	70
+   205  0045                     _RD5	set	69
+   206  0044                     _RD4	set	68
+   207  0043                     _RD3	set	67
+   208  0042                     _RD2	set	66
+   209  0041                     _RD1	set	65
+   210  0040                     _RD0	set	64
+   211  0028                     _RA0	set	40
+   212  003F                     _RC7	set	63
+   213  003E                     _RC6	set	62
+   214  003D                     _RC5	set	61
+   215  003C                     _RC4	set	60
+   216  003B                     _RC3	set	59
+   217  003A                     _RC2	set	58
+   218  0039                     _RC1	set	57
+   219  0038                     _RC0	set	56
+   220  0088                     _TRISD	set	136
+   221  0087                     _TRISC	set	135
+   222  0085                     _TRISA	set	133
+   223  0189                     _ANSELH	set	393
+   224  0188                     _ANSEL	set	392
+   225                           
+   226                           	psect	cinit
+   227  07FC                     start_initialization:	
+   228                           ; #config settings
+   229                           
+   230  07FC                     __initialization:
+   231  07FC                     end_of_initialization:	
+   232                           ;End of C runtime variable initialization code
+   233                           
+   234  07FC                     __end_of__initialization:
+   235  07FC  0183               	clrf	3
+   236  07FD  120A  118A  2C6A   	ljmp	_main	;jump to C main() function
+   237                           
+   238                           	psect	cstackCOMMON
+   239  0000                     __pcstackCOMMON:
+   240  0000                     ?_main:
+   241                           
+   242                           	psect	cstackBANK0
+   243  0020                     __pcstackBANK0:	
+   244                           ; 1 bytes @ 0x0
+   245                           
+   246  0020                     ??_main:
+   247                           
+   248                           ; 1 bytes @ 0x0
+   249  0020                     	ds	16
+   250                           
+   251                           	psect	maintext
+   252  046A                     __pmaintext:	
+   253 ;;
+   254 ;;Main: autosize = 0, tempsize = 16, incstack = 0, save=0
+   255 ;;
+   256 ;; *************** function _main *****************
+   257 ;; Defined at:
+   258 ;;		line 12 in file "LED AND BUTTON.c"
+   259 ;; Parameters:    Size  Location     Type
+   260 ;;		None
+   261 ;; Auto vars:     Size  Location     Type
+   262 ;;		None
+   263 ;; Return value:  Size  Location     Type
+   264 ;;                  1    wreg      void 
+   265 ;; Registers used:
+   266 ;;		wreg, status,2, status,0
+   267 ;; Tracked objects:
+   268 ;;		On entry : B00/0
+   269 ;;		On exit  : 0/0
+   270 ;;		Unchanged: 0/0
+   271 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   272 ;;      Params:         0       0       0       0       0
+   273 ;;      Locals:         0       0       0       0       0
+   274 ;;      Temps:          0      16       0       0       0
+   275 ;;      Totals:         0      16       0       0       0
+   276 ;;Total ram usage:       16 bytes
+   277 ;; This function calls:
+   278 ;;		Nothing
+   279 ;; This function is called by:
+   280 ;;		Startup code after reset
+   281 ;; This function uses a non-reentrant model
+   282 ;;
+   283                           
+   284                           
+   285                           ;psect for function _main
+   286  046A                     _main:
+   287  046A                     l715:	
+   288                           ;incstack = 0
+   289                           ; Regs used in _main: [wreg+status,2+status,0]
+   290                           
+   291                           
+   292                           ;LED AND BUTTON.c: 14:     TRISA=0x01;
+   293  046A  3001               	movlw	1
+   294  046B  1683               	bsf	3,5	;RP0=1, select bank1
+   295  046C  1303               	bcf	3,6	;RP1=0, select bank1
+   296  046D  0085               	movwf	5	;volatile
+   297  046E                     l717:
+   298                           
+   299                           ;LED AND BUTTON.c: 15:     PORTA=0x00;
+   300  046E  1283               	bcf	3,5	;RP0=0, select bank0
+   301  046F  1303               	bcf	3,6	;RP1=0, select bank0
+   302  0470  0185               	clrf	5	;volatile
+   303  0471                     l719:
+   304                           
+   305                           ;LED AND BUTTON.c: 16:     TRISC=0xFF;
+   306  0471  30FF               	movlw	255
+   307  0472  1683               	bsf	3,5	;RP0=1, select bank1
+   308  0473  1303               	bcf	3,6	;RP1=0, select bank1
+   309  0474  0087               	movwf	7	;volatile
+   310                           
+   311                           ;LED AND BUTTON.c: 17:     PORTC=0x00;
+   312  0475  1283               	bcf	3,5	;RP0=0, select bank0
+   313  0476  1303               	bcf	3,6	;RP1=0, select bank0
+   314  0477  0187               	clrf	7	;volatile
+   315                           
+   316                           ;LED AND BUTTON.c: 18:     TRISD=0x00;
+   317  0478  1683               	bsf	3,5	;RP0=1, select bank1
+   318  0479  1303               	bcf	3,6	;RP1=0, select bank1
+   319  047A  0188               	clrf	8	;volatile
+   320                           
+   321                           ;LED AND BUTTON.c: 19:     PORTD=0x00;
+   322  047B  1283               	bcf	3,5	;RP0=0, select bank0
+   323  047C  1303               	bcf	3,6	;RP1=0, select bank0
+   324  047D  0188               	clrf	8	;volatile
+   325                           
+   326                           ;LED AND BUTTON.c: 20:     ANSEL=0x00;
+   327  047E  1683               	bsf	3,5	;RP0=1, select bank3
+   328  047F  1703               	bsf	3,6	;RP1=1, select bank3
+   329  0480  0188               	clrf	8	;volatile
+   330                           
+   331                           ;LED AND BUTTON.c: 21:     ANSELH=0x00;
+   332  0481  0189               	clrf	9	;volatile
+   333  0482                     l721:
+   334                           
+   335                           ;LED AND BUTTON.c: 24:     {;LED AND BUTTON.c: 25:         if((RC0+RC1+RC2+RC3+RC4+RC5+R
+      +                          C6+RC7==1)&&(RA0==0))
+   336  0482  1003               	clrc
+   337  0483  1283               	bcf	3,5	;RP0=0, select bank0
+   338  0484  1303               	bcf	3,6	;RP1=0, select bank0
+   339  0485  1887               	btfsc	7,1	;volatile
+   340  0486  1403               	setc
+   341  0487  3000               	movlw	0
+   342  0488  1803               	skipnc
+   343  0489  3001               	movlw	1
+   344  048A  00A0               	movwf	??_main
+   345  048B  01A1               	clrf	??_main+1
+   346  048C  1003               	clrc
+   347  048D  1807               	btfsc	7,0	;volatile
+   348  048E  1403               	setc
+   349  048F  3000               	movlw	0
+   350  0490  1803               	skipnc
+   351  0491  3001               	movlw	1
+   352  0492  0720               	addwf	??_main,w
+   353  0493  00A2               	movwf	??_main+2
+   354  0494  0821               	movf	??_main+1,w
+   355  0495  1803               	skipnc
+   356  0496  0A21               	incf	??_main+1,w
+   357  0497  00A3               	movwf	??_main+3
+   358  0498  1003               	clrc
+   359  0499  1907               	btfsc	7,2	;volatile
+   360  049A  1403               	setc
+   361  049B  3000               	movlw	0
+   362  049C  1803               	skipnc
+   363  049D  3001               	movlw	1
+   364  049E  0722               	addwf	??_main+2,w
+   365  049F  00A4               	movwf	??_main+4
+   366  04A0  3000               	movlw	0
+   367  04A1  1803               	skipnc
+   368  04A2  3001               	movlw	1
+   369  04A3  0723               	addwf	??_main+3,w
+   370  04A4  00A5               	movwf	??_main+5
+   371  04A5  1003               	clrc
+   372  04A6  1987               	btfsc	7,3	;volatile
+   373  04A7  1403               	setc
+   374  04A8  3000               	movlw	0
+   375  04A9  1803               	skipnc
+   376  04AA  3001               	movlw	1
+   377  04AB  0724               	addwf	??_main+4,w
+   378  04AC  00A6               	movwf	??_main+6
+   379  04AD  3000               	movlw	0
+   380  04AE  1803               	skipnc
+   381  04AF  3001               	movlw	1
+   382  04B0  0725               	addwf	??_main+5,w
+   383  04B1  00A7               	movwf	??_main+7
+   384  04B2  1003               	clrc
+   385  04B3  1A07               	btfsc	7,4	;volatile
+   386  04B4  1403               	setc
+   387  04B5  3000               	movlw	0
+   388  04B6  1803               	skipnc
+   389  04B7  3001               	movlw	1
+   390  04B8  0726               	addwf	??_main+6,w
+   391  04B9  00A8               	movwf	??_main+8
+   392  04BA  3000               	movlw	0
+   393  04BB  1803               	skipnc
+   394  04BC  3001               	movlw	1
+   395  04BD  0727               	addwf	??_main+7,w
+   396  04BE  00A9               	movwf	??_main+9
+   397  04BF  1003               	clrc
+   398  04C0  1A87               	btfsc	7,5	;volatile
+   399  04C1  1403               	setc
+   400  04C2  3000               	movlw	0
+   401  04C3  1803               	skipnc
+   402  04C4  3001               	movlw	1
+   403  04C5  0728               	addwf	??_main+8,w
+   404  04C6  00AA               	movwf	??_main+10
+   405  04C7  3000               	movlw	0
+   406  04C8  1803               	skipnc
+   407  04C9  3001               	movlw	1
+   408  04CA  0729               	addwf	??_main+9,w
+   409  04CB  00AB               	movwf	??_main+11
+   410  04CC  1003               	clrc
+   411  04CD  1B07               	btfsc	7,6	;volatile
+   412  04CE  1403               	setc
+   413  04CF  3000               	movlw	0
+   414  04D0  1803               	skipnc
+   415  04D1  3001               	movlw	1
+   416  04D2  072A               	addwf	??_main+10,w
+   417  04D3  00AC               	movwf	??_main+12
+   418  04D4  3000               	movlw	0
+   419  04D5  1803               	skipnc
+   420  04D6  3001               	movlw	1
+   421  04D7  072B               	addwf	??_main+11,w
+   422  04D8  00AD               	movwf	??_main+13
+   423  04D9  1003               	clrc
+   424  04DA  1B87               	btfsc	7,7	;volatile
+   425  04DB  1403               	setc
+   426  04DC  3000               	movlw	0
+   427  04DD  1803               	skipnc
+   428  04DE  3001               	movlw	1
+   429  04DF  072C               	addwf	??_main+12,w
+   430  04E0  00AE               	movwf	??_main+14
+   431  04E1  3000               	movlw	0
+   432  04E2  1803               	skipnc
+   433  04E3  3001               	movlw	1
+   434  04E4  072D               	addwf	??_main+13,w
+   435  04E5  00AF               	movwf	??_main+15
+   436  04E6  032E               	decf	??_main+14,w
+   437  04E7  042F               	iorwf	??_main+15,w
+   438  04E8  1D03               	btfss	3,2
+   439  04E9  2CEB               	goto	u181
+   440  04EA  2CEC               	goto	u180
+   441  04EB                     u181:
+   442  04EB  2CF1               	goto	l727
+   443  04EC                     u180:
+   444  04EC                     l723:
+   445  04EC  1805               	btfsc	5,0	;volatile
+   446  04ED  2CEF               	goto	u191
+   447  04EE  2CF0               	goto	u190
+   448  04EF                     u191:
+   449  04EF  2CF1               	goto	l727
+   450  04F0                     u190:
+   451  04F0                     l725:
+   452                           
+   453                           ;LED AND BUTTON.c: 26:         {;LED AND BUTTON.c: 27:             RD0=1;
+   454  04F0  1408               	bsf	8,0	;volatile
+   455  04F1                     l727:
+   456                           
+   457                           ;LED AND BUTTON.c: 29:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==2)&&(RA0==0))
+   458  04F1  1003               	clrc
+   459  04F2  1887               	btfsc	7,1	;volatile
+   460  04F3  1403               	setc
+   461  04F4  3000               	movlw	0
+   462  04F5  1803               	skipnc
+   463  04F6  3001               	movlw	1
+   464  04F7  00A0               	movwf	??_main
+   465  04F8  01A1               	clrf	??_main+1
+   466  04F9  1003               	clrc
+   467  04FA  1807               	btfsc	7,0	;volatile
+   468  04FB  1403               	setc
+   469  04FC  3000               	movlw	0
+   470  04FD  1803               	skipnc
+   471  04FE  3001               	movlw	1
+   472  04FF  0720               	addwf	??_main,w
+   473  0500  00A2               	movwf	??_main+2
+   474  0501  0821               	movf	??_main+1,w
+   475  0502  1803               	skipnc
+   476  0503  0A21               	incf	??_main+1,w
+   477  0504  00A3               	movwf	??_main+3
+   478  0505  1003               	clrc
+   479  0506  1907               	btfsc	7,2	;volatile
+   480  0507  1403               	setc
+   481  0508  3000               	movlw	0
+   482  0509  1803               	skipnc
+   483  050A  3001               	movlw	1
+   484  050B  0722               	addwf	??_main+2,w
+   485  050C  00A4               	movwf	??_main+4
+   486  050D  3000               	movlw	0
+   487  050E  1803               	skipnc
+   488  050F  3001               	movlw	1
+   489  0510  0723               	addwf	??_main+3,w
+   490  0511  00A5               	movwf	??_main+5
+   491  0512  1003               	clrc
+   492  0513  1987               	btfsc	7,3	;volatile
+   493  0514  1403               	setc
+   494  0515  3000               	movlw	0
+   495  0516  1803               	skipnc
+   496  0517  3001               	movlw	1
+   497  0518  0724               	addwf	??_main+4,w
+   498  0519  00A6               	movwf	??_main+6
+   499  051A  3000               	movlw	0
+   500  051B  1803               	skipnc
+   501  051C  3001               	movlw	1
+   502  051D  0725               	addwf	??_main+5,w
+   503  051E  00A7               	movwf	??_main+7
+   504  051F  1003               	clrc
+   505  0520  1A07               	btfsc	7,4	;volatile
+   506  0521  1403               	setc
+   507  0522  3000               	movlw	0
+   508  0523  1803               	skipnc
+   509  0524  3001               	movlw	1
+   510  0525  0726               	addwf	??_main+6,w
+   511  0526  00A8               	movwf	??_main+8
+   512  0527  3000               	movlw	0
+   513  0528  1803               	skipnc
+   514  0529  3001               	movlw	1
+   515  052A  0727               	addwf	??_main+7,w
+   516  052B  00A9               	movwf	??_main+9
+   517  052C  1003               	clrc
+   518  052D  1A87               	btfsc	7,5	;volatile
+   519  052E  1403               	setc
+   520  052F  3000               	movlw	0
+   521  0530  1803               	skipnc
+   522  0531  3001               	movlw	1
+   523  0532  0728               	addwf	??_main+8,w
+   524  0533  00AA               	movwf	??_main+10
+   525  0534  3000               	movlw	0
+   526  0535  1803               	skipnc
+   527  0536  3001               	movlw	1
+   528  0537  0729               	addwf	??_main+9,w
+   529  0538  00AB               	movwf	??_main+11
+   530  0539  1003               	clrc
+   531  053A  1B07               	btfsc	7,6	;volatile
+   532  053B  1403               	setc
+   533  053C  3000               	movlw	0
+   534  053D  1803               	skipnc
+   535  053E  3001               	movlw	1
+   536  053F  072A               	addwf	??_main+10,w
+   537  0540  00AC               	movwf	??_main+12
+   538  0541  3000               	movlw	0
+   539  0542  1803               	skipnc
+   540  0543  3001               	movlw	1
+   541  0544  072B               	addwf	??_main+11,w
+   542  0545  00AD               	movwf	??_main+13
+   543  0546  1003               	clrc
+   544  0547  1B87               	btfsc	7,7	;volatile
+   545  0548  1403               	setc
+   546  0549  3000               	movlw	0
+   547  054A  1803               	skipnc
+   548  054B  3001               	movlw	1
+   549  054C  072C               	addwf	??_main+12,w
+   550  054D  00AE               	movwf	??_main+14
+   551  054E  3000               	movlw	0
+   552  054F  1803               	skipnc
+   553  0550  3001               	movlw	1
+   554  0551  072D               	addwf	??_main+13,w
+   555  0552  00AF               	movwf	??_main+15
+   556  0553  3002               	movlw	2
+   557  0554  062E               	xorwf	??_main+14,w
+   558  0555  042F               	iorwf	??_main+15,w
+   559  0556  1D03               	btfss	3,2
+   560  0557  2D59               	goto	u201
+   561  0558  2D5A               	goto	u200
+   562  0559                     u201:
+   563  0559  2D5F               	goto	l733
+   564  055A                     u200:
+   565  055A                     l729:
+   566  055A  1805               	btfsc	5,0	;volatile
+   567  055B  2D5D               	goto	u211
+   568  055C  2D5E               	goto	u210
+   569  055D                     u211:
+   570  055D  2D5F               	goto	l733
+   571  055E                     u210:
+   572  055E                     l731:
+   573                           
+   574                           ;LED AND BUTTON.c: 30:         {;LED AND BUTTON.c: 31:             RD1=1;
+   575  055E  1488               	bsf	8,1	;volatile
+   576  055F                     l733:
+   577                           
+   578                           ;LED AND BUTTON.c: 33:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==3)&&(RA0==0))
+   579  055F  1003               	clrc
+   580  0560  1887               	btfsc	7,1	;volatile
+   581  0561  1403               	setc
+   582  0562  3000               	movlw	0
+   583  0563  1803               	skipnc
+   584  0564  3001               	movlw	1
+   585  0565  00A0               	movwf	??_main
+   586  0566  01A1               	clrf	??_main+1
+   587  0567  1003               	clrc
+   588  0568  1807               	btfsc	7,0	;volatile
+   589  0569  1403               	setc
+   590  056A  3000               	movlw	0
+   591  056B  1803               	skipnc
+   592  056C  3001               	movlw	1
+   593  056D  0720               	addwf	??_main,w
+   594  056E  00A2               	movwf	??_main+2
+   595  056F  0821               	movf	??_main+1,w
+   596  0570  1803               	skipnc
+   597  0571  0A21               	incf	??_main+1,w
+   598  0572  00A3               	movwf	??_main+3
+   599  0573  1003               	clrc
+   600  0574  1907               	btfsc	7,2	;volatile
+   601  0575  1403               	setc
+   602  0576  3000               	movlw	0
+   603  0577  1803               	skipnc
+   604  0578  3001               	movlw	1
+   605  0579  0722               	addwf	??_main+2,w
+   606  057A  00A4               	movwf	??_main+4
+   607  057B  3000               	movlw	0
+   608  057C  1803               	skipnc
+   609  057D  3001               	movlw	1
+   610  057E  0723               	addwf	??_main+3,w
+   611  057F  00A5               	movwf	??_main+5
+   612  0580  1003               	clrc
+   613  0581  1987               	btfsc	7,3	;volatile
+   614  0582  1403               	setc
+   615  0583  3000               	movlw	0
+   616  0584  1803               	skipnc
+   617  0585  3001               	movlw	1
+   618  0586  0724               	addwf	??_main+4,w
+   619  0587  00A6               	movwf	??_main+6
+   620  0588  3000               	movlw	0
+   621  0589  1803               	skipnc
+   622  058A  3001               	movlw	1
+   623  058B  0725               	addwf	??_main+5,w
+   624  058C  00A7               	movwf	??_main+7
+   625  058D  1003               	clrc
+   626  058E  1A07               	btfsc	7,4	;volatile
+   627  058F  1403               	setc
+   628  0590  3000               	movlw	0
+   629  0591  1803               	skipnc
+   630  0592  3001               	movlw	1
+   631  0593  0726               	addwf	??_main+6,w
+   632  0594  00A8               	movwf	??_main+8
+   633  0595  3000               	movlw	0
+   634  0596  1803               	skipnc
+   635  0597  3001               	movlw	1
+   636  0598  0727               	addwf	??_main+7,w
+   637  0599  00A9               	movwf	??_main+9
+   638  059A  1003               	clrc
+   639  059B  1A87               	btfsc	7,5	;volatile
+   640  059C  1403               	setc
+   641  059D  3000               	movlw	0
+   642  059E  1803               	skipnc
+   643  059F  3001               	movlw	1
+   644  05A0  0728               	addwf	??_main+8,w
+   645  05A1  00AA               	movwf	??_main+10
+   646  05A2  3000               	movlw	0
+   647  05A3  1803               	skipnc
+   648  05A4  3001               	movlw	1
+   649  05A5  0729               	addwf	??_main+9,w
+   650  05A6  00AB               	movwf	??_main+11
+   651  05A7  1003               	clrc
+   652  05A8  1B07               	btfsc	7,6	;volatile
+   653  05A9  1403               	setc
+   654  05AA  3000               	movlw	0
+   655  05AB  1803               	skipnc
+   656  05AC  3001               	movlw	1
+   657  05AD  072A               	addwf	??_main+10,w
+   658  05AE  00AC               	movwf	??_main+12
+   659  05AF  3000               	movlw	0
+   660  05B0  1803               	skipnc
+   661  05B1  3001               	movlw	1
+   662  05B2  072B               	addwf	??_main+11,w
+   663  05B3  00AD               	movwf	??_main+13
+   664  05B4  1003               	clrc
+   665  05B5  1B87               	btfsc	7,7	;volatile
+   666  05B6  1403               	setc
+   667  05B7  3000               	movlw	0
+   668  05B8  1803               	skipnc
+   669  05B9  3001               	movlw	1
+   670  05BA  072C               	addwf	??_main+12,w
+   671  05BB  00AE               	movwf	??_main+14
+   672  05BC  3000               	movlw	0
+   673  05BD  1803               	skipnc
+   674  05BE  3001               	movlw	1
+   675  05BF  072D               	addwf	??_main+13,w
+   676  05C0  00AF               	movwf	??_main+15
+   677  05C1  3003               	movlw	3
+   678  05C2  062E               	xorwf	??_main+14,w
+   679  05C3  042F               	iorwf	??_main+15,w
+   680  05C4  1D03               	btfss	3,2
+   681  05C5  2DC7               	goto	u221
+   682  05C6  2DC8               	goto	u220
+   683  05C7                     u221:
+   684  05C7  2DCD               	goto	l739
+   685  05C8                     u220:
+   686  05C8                     l735:
+   687  05C8  1805               	btfsc	5,0	;volatile
+   688  05C9  2DCB               	goto	u231
+   689  05CA  2DCC               	goto	u230
+   690  05CB                     u231:
+   691  05CB  2DCD               	goto	l739
+   692  05CC                     u230:
+   693  05CC                     l737:
+   694                           
+   695                           ;LED AND BUTTON.c: 34:         {;LED AND BUTTON.c: 35:             RD2=1;
+   696  05CC  1508               	bsf	8,2	;volatile
+   697  05CD                     l739:
+   698                           
+   699                           ;LED AND BUTTON.c: 37:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==4)&&(RA0==0))
+   700  05CD  1003               	clrc
+   701  05CE  1887               	btfsc	7,1	;volatile
+   702  05CF  1403               	setc
+   703  05D0  3000               	movlw	0
+   704  05D1  1803               	skipnc
+   705  05D2  3001               	movlw	1
+   706  05D3  00A0               	movwf	??_main
+   707  05D4  01A1               	clrf	??_main+1
+   708  05D5  1003               	clrc
+   709  05D6  1807               	btfsc	7,0	;volatile
+   710  05D7  1403               	setc
+   711  05D8  3000               	movlw	0
+   712  05D9  1803               	skipnc
+   713  05DA  3001               	movlw	1
+   714  05DB  0720               	addwf	??_main,w
+   715  05DC  00A2               	movwf	??_main+2
+   716  05DD  0821               	movf	??_main+1,w
+   717  05DE  1803               	skipnc
+   718  05DF  0A21               	incf	??_main+1,w
+   719  05E0  00A3               	movwf	??_main+3
+   720  05E1  1003               	clrc
+   721  05E2  1907               	btfsc	7,2	;volatile
+   722  05E3  1403               	setc
+   723  05E4  3000               	movlw	0
+   724  05E5  1803               	skipnc
+   725  05E6  3001               	movlw	1
+   726  05E7  0722               	addwf	??_main+2,w
+   727  05E8  00A4               	movwf	??_main+4
+   728  05E9  3000               	movlw	0
+   729  05EA  1803               	skipnc
+   730  05EB  3001               	movlw	1
+   731  05EC  0723               	addwf	??_main+3,w
+   732  05ED  00A5               	movwf	??_main+5
+   733  05EE  1003               	clrc
+   734  05EF  1987               	btfsc	7,3	;volatile
+   735  05F0  1403               	setc
+   736  05F1  3000               	movlw	0
+   737  05F2  1803               	skipnc
+   738  05F3  3001               	movlw	1
+   739  05F4  0724               	addwf	??_main+4,w
+   740  05F5  00A6               	movwf	??_main+6
+   741  05F6  3000               	movlw	0
+   742  05F7  1803               	skipnc
+   743  05F8  3001               	movlw	1
+   744  05F9  0725               	addwf	??_main+5,w
+   745  05FA  00A7               	movwf	??_main+7
+   746  05FB  1003               	clrc
+   747  05FC  1A07               	btfsc	7,4	;volatile
+   748  05FD  1403               	setc
+   749  05FE  3000               	movlw	0
+   750  05FF  1803               	skipnc
+   751  0600  3001               	movlw	1
+   752  0601  0726               	addwf	??_main+6,w
+   753  0602  00A8               	movwf	??_main+8
+   754  0603  3000               	movlw	0
+   755  0604  1803               	skipnc
+   756  0605  3001               	movlw	1
+   757  0606  0727               	addwf	??_main+7,w
+   758  0607  00A9               	movwf	??_main+9
+   759  0608  1003               	clrc
+   760  0609  1A87               	btfsc	7,5	;volatile
+   761  060A  1403               	setc
+   762  060B  3000               	movlw	0
+   763  060C  1803               	skipnc
+   764  060D  3001               	movlw	1
+   765  060E  0728               	addwf	??_main+8,w
+   766  060F  00AA               	movwf	??_main+10
+   767  0610  3000               	movlw	0
+   768  0611  1803               	skipnc
+   769  0612  3001               	movlw	1
+   770  0613  0729               	addwf	??_main+9,w
+   771  0614  00AB               	movwf	??_main+11
+   772  0615  1003               	clrc
+   773  0616  1B07               	btfsc	7,6	;volatile
+   774  0617  1403               	setc
+   775  0618  3000               	movlw	0
+   776  0619  1803               	skipnc
+   777  061A  3001               	movlw	1
+   778  061B  072A               	addwf	??_main+10,w
+   779  061C  00AC               	movwf	??_main+12
+   780  061D  3000               	movlw	0
+   781  061E  1803               	skipnc
+   782  061F  3001               	movlw	1
+   783  0620  072B               	addwf	??_main+11,w
+   784  0621  00AD               	movwf	??_main+13
+   785  0622  1003               	clrc
+   786  0623  1B87               	btfsc	7,7	;volatile
+   787  0624  1403               	setc
+   788  0625  3000               	movlw	0
+   789  0626  1803               	skipnc
+   790  0627  3001               	movlw	1
+   791  0628  072C               	addwf	??_main+12,w
+   792  0629  00AE               	movwf	??_main+14
+   793  062A  3000               	movlw	0
+   794  062B  1803               	skipnc
+   795  062C  3001               	movlw	1
+   796  062D  072D               	addwf	??_main+13,w
+   797  062E  00AF               	movwf	??_main+15
+   798  062F  3004               	movlw	4
+   799  0630  062E               	xorwf	??_main+14,w
+   800  0631  042F               	iorwf	??_main+15,w
+   801  0632  1D03               	btfss	3,2
+   802  0633  2E35               	goto	u241
+   803  0634  2E36               	goto	u240
+   804  0635                     u241:
+   805  0635  2E3B               	goto	l745
+   806  0636                     u240:
+   807  0636                     l741:
+   808  0636  1805               	btfsc	5,0	;volatile
+   809  0637  2E39               	goto	u251
+   810  0638  2E3A               	goto	u250
+   811  0639                     u251:
+   812  0639  2E3B               	goto	l745
+   813  063A                     u250:
+   814  063A                     l743:
+   815                           
+   816                           ;LED AND BUTTON.c: 38:         {;LED AND BUTTON.c: 39:             RD3=1;
+   817  063A  1588               	bsf	8,3	;volatile
+   818  063B                     l745:
+   819                           
+   820                           ;LED AND BUTTON.c: 41:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==5)&&(RA0==0))
+   821  063B  1003               	clrc
+   822  063C  1887               	btfsc	7,1	;volatile
+   823  063D  1403               	setc
+   824  063E  3000               	movlw	0
+   825  063F  1803               	skipnc
+   826  0640  3001               	movlw	1
+   827  0641  00A0               	movwf	??_main
+   828  0642  01A1               	clrf	??_main+1
+   829  0643  1003               	clrc
+   830  0644  1807               	btfsc	7,0	;volatile
+   831  0645  1403               	setc
+   832  0646  3000               	movlw	0
+   833  0647  1803               	skipnc
+   834  0648  3001               	movlw	1
+   835  0649  0720               	addwf	??_main,w
+   836  064A  00A2               	movwf	??_main+2
+   837  064B  0821               	movf	??_main+1,w
+   838  064C  1803               	skipnc
+   839  064D  0A21               	incf	??_main+1,w
+   840  064E  00A3               	movwf	??_main+3
+   841  064F  1003               	clrc
+   842  0650  1907               	btfsc	7,2	;volatile
+   843  0651  1403               	setc
+   844  0652  3000               	movlw	0
+   845  0653  1803               	skipnc
+   846  0654  3001               	movlw	1
+   847  0655  0722               	addwf	??_main+2,w
+   848  0656  00A4               	movwf	??_main+4
+   849  0657  3000               	movlw	0
+   850  0658  1803               	skipnc
+   851  0659  3001               	movlw	1
+   852  065A  0723               	addwf	??_main+3,w
+   853  065B  00A5               	movwf	??_main+5
+   854  065C  1003               	clrc
+   855  065D  1987               	btfsc	7,3	;volatile
+   856  065E  1403               	setc
+   857  065F  3000               	movlw	0
+   858  0660  1803               	skipnc
+   859  0661  3001               	movlw	1
+   860  0662  0724               	addwf	??_main+4,w
+   861  0663  00A6               	movwf	??_main+6
+   862  0664  3000               	movlw	0
+   863  0665  1803               	skipnc
+   864  0666  3001               	movlw	1
+   865  0667  0725               	addwf	??_main+5,w
+   866  0668  00A7               	movwf	??_main+7
+   867  0669  1003               	clrc
+   868  066A  1A07               	btfsc	7,4	;volatile
+   869  066B  1403               	setc
+   870  066C  3000               	movlw	0
+   871  066D  1803               	skipnc
+   872  066E  3001               	movlw	1
+   873  066F  0726               	addwf	??_main+6,w
+   874  0670  00A8               	movwf	??_main+8
+   875  0671  3000               	movlw	0
+   876  0672  1803               	skipnc
+   877  0673  3001               	movlw	1
+   878  0674  0727               	addwf	??_main+7,w
+   879  0675  00A9               	movwf	??_main+9
+   880  0676  1003               	clrc
+   881  0677  1A87               	btfsc	7,5	;volatile
+   882  0678  1403               	setc
+   883  0679  3000               	movlw	0
+   884  067A  1803               	skipnc
+   885  067B  3001               	movlw	1
+   886  067C  0728               	addwf	??_main+8,w
+   887  067D  00AA               	movwf	??_main+10
+   888  067E  3000               	movlw	0
+   889  067F  1803               	skipnc
+   890  0680  3001               	movlw	1
+   891  0681  0729               	addwf	??_main+9,w
+   892  0682  00AB               	movwf	??_main+11
+   893  0683  1003               	clrc
+   894  0684  1B07               	btfsc	7,6	;volatile
+   895  0685  1403               	setc
+   896  0686  3000               	movlw	0
+   897  0687  1803               	skipnc
+   898  0688  3001               	movlw	1
+   899  0689  072A               	addwf	??_main+10,w
+   900  068A  00AC               	movwf	??_main+12
+   901  068B  3000               	movlw	0
+   902  068C  1803               	skipnc
+   903  068D  3001               	movlw	1
+   904  068E  072B               	addwf	??_main+11,w
+   905  068F  00AD               	movwf	??_main+13
+   906  0690  1003               	clrc
+   907  0691  1B87               	btfsc	7,7	;volatile
+   908  0692  1403               	setc
+   909  0693  3000               	movlw	0
+   910  0694  1803               	skipnc
+   911  0695  3001               	movlw	1
+   912  0696  072C               	addwf	??_main+12,w
+   913  0697  00AE               	movwf	??_main+14
+   914  0698  3000               	movlw	0
+   915  0699  1803               	skipnc
+   916  069A  3001               	movlw	1
+   917  069B  072D               	addwf	??_main+13,w
+   918  069C  00AF               	movwf	??_main+15
+   919  069D  3005               	movlw	5
+   920  069E  062E               	xorwf	??_main+14,w
+   921  069F  042F               	iorwf	??_main+15,w
+   922  06A0  1D03               	btfss	3,2
+   923  06A1  2EA3               	goto	u261
+   924  06A2  2EA4               	goto	u260
+   925  06A3                     u261:
+   926  06A3  2EA9               	goto	l751
+   927  06A4                     u260:
+   928  06A4                     l747:
+   929  06A4  1805               	btfsc	5,0	;volatile
+   930  06A5  2EA7               	goto	u271
+   931  06A6  2EA8               	goto	u270
+   932  06A7                     u271:
+   933  06A7  2EA9               	goto	l751
+   934  06A8                     u270:
+   935  06A8                     l749:
+   936                           
+   937                           ;LED AND BUTTON.c: 42:         {;LED AND BUTTON.c: 43:             RD4=1;
+   938  06A8  1608               	bsf	8,4	;volatile
+   939  06A9                     l751:
+   940                           
+   941                           ;LED AND BUTTON.c: 45:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==6)&&(RA0==0))
+   942  06A9  1003               	clrc
+   943  06AA  1887               	btfsc	7,1	;volatile
+   944  06AB  1403               	setc
+   945  06AC  3000               	movlw	0
+   946  06AD  1803               	skipnc
+   947  06AE  3001               	movlw	1
+   948  06AF  00A0               	movwf	??_main
+   949  06B0  01A1               	clrf	??_main+1
+   950  06B1  1003               	clrc
+   951  06B2  1807               	btfsc	7,0	;volatile
+   952  06B3  1403               	setc
+   953  06B4  3000               	movlw	0
+   954  06B5  1803               	skipnc
+   955  06B6  3001               	movlw	1
+   956  06B7  0720               	addwf	??_main,w
+   957  06B8  00A2               	movwf	??_main+2
+   958  06B9  0821               	movf	??_main+1,w
+   959  06BA  1803               	skipnc
+   960  06BB  0A21               	incf	??_main+1,w
+   961  06BC  00A3               	movwf	??_main+3
+   962  06BD  1003               	clrc
+   963  06BE  1907               	btfsc	7,2	;volatile
+   964  06BF  1403               	setc
+   965  06C0  3000               	movlw	0
+   966  06C1  1803               	skipnc
+   967  06C2  3001               	movlw	1
+   968  06C3  0722               	addwf	??_main+2,w
+   969  06C4  00A4               	movwf	??_main+4
+   970  06C5  3000               	movlw	0
+   971  06C6  1803               	skipnc
+   972  06C7  3001               	movlw	1
+   973  06C8  0723               	addwf	??_main+3,w
+   974  06C9  00A5               	movwf	??_main+5
+   975  06CA  1003               	clrc
+   976  06CB  1987               	btfsc	7,3	;volatile
+   977  06CC  1403               	setc
+   978  06CD  3000               	movlw	0
+   979  06CE  1803               	skipnc
+   980  06CF  3001               	movlw	1
+   981  06D0  0724               	addwf	??_main+4,w
+   982  06D1  00A6               	movwf	??_main+6
+   983  06D2  3000               	movlw	0
+   984  06D3  1803               	skipnc
+   985  06D4  3001               	movlw	1
+   986  06D5  0725               	addwf	??_main+5,w
+   987  06D6  00A7               	movwf	??_main+7
+   988  06D7  1003               	clrc
+   989  06D8  1A07               	btfsc	7,4	;volatile
+   990  06D9  1403               	setc
+   991  06DA  3000               	movlw	0
+   992  06DB  1803               	skipnc
+   993  06DC  3001               	movlw	1
+   994  06DD  0726               	addwf	??_main+6,w
+   995  06DE  00A8               	movwf	??_main+8
+   996  06DF  3000               	movlw	0
+   997  06E0  1803               	skipnc
+   998  06E1  3001               	movlw	1
+   999  06E2  0727               	addwf	??_main+7,w
+  1000  06E3  00A9               	movwf	??_main+9
+  1001  06E4  1003               	clrc
+  1002  06E5  1A87               	btfsc	7,5	;volatile
+  1003  06E6  1403               	setc
+  1004  06E7  3000               	movlw	0
+  1005  06E8  1803               	skipnc
+  1006  06E9  3001               	movlw	1
+  1007  06EA  0728               	addwf	??_main+8,w
+  1008  06EB  00AA               	movwf	??_main+10
+  1009  06EC  3000               	movlw	0
+  1010  06ED  1803               	skipnc
+  1011  06EE  3001               	movlw	1
+  1012  06EF  0729               	addwf	??_main+9,w
+  1013  06F0  00AB               	movwf	??_main+11
+  1014  06F1  1003               	clrc
+  1015  06F2  1B07               	btfsc	7,6	;volatile
+  1016  06F3  1403               	setc
+  1017  06F4  3000               	movlw	0
+  1018  06F5  1803               	skipnc
+  1019  06F6  3001               	movlw	1
+  1020  06F7  072A               	addwf	??_main+10,w
+  1021  06F8  00AC               	movwf	??_main+12
+  1022  06F9  3000               	movlw	0
+  1023  06FA  1803               	skipnc
+  1024  06FB  3001               	movlw	1
+  1025  06FC  072B               	addwf	??_main+11,w
+  1026  06FD  00AD               	movwf	??_main+13
+  1027  06FE  1003               	clrc
+  1028  06FF  1B87               	btfsc	7,7	;volatile
+  1029  0700  1403               	setc
+  1030  0701  3000               	movlw	0
+  1031  0702  1803               	skipnc
+  1032  0703  3001               	movlw	1
+  1033  0704  072C               	addwf	??_main+12,w
+  1034  0705  00AE               	movwf	??_main+14
+  1035  0706  3000               	movlw	0
+  1036  0707  1803               	skipnc
+  1037  0708  3001               	movlw	1
+  1038  0709  072D               	addwf	??_main+13,w
+  1039  070A  00AF               	movwf	??_main+15
+  1040  070B  3006               	movlw	6
+  1041  070C  062E               	xorwf	??_main+14,w
+  1042  070D  042F               	iorwf	??_main+15,w
+  1043  070E  1D03               	btfss	3,2
+  1044  070F  2F11               	goto	u281
+  1045  0710  2F12               	goto	u280
+  1046  0711                     u281:
+  1047  0711  2F17               	goto	l757
+  1048  0712                     u280:
+  1049  0712                     l753:
+  1050  0712  1805               	btfsc	5,0	;volatile
+  1051  0713  2F15               	goto	u291
+  1052  0714  2F16               	goto	u290
+  1053  0715                     u291:
+  1054  0715  2F17               	goto	l757
+  1055  0716                     u290:
+  1056  0716                     l755:
+  1057                           
+  1058                           ;LED AND BUTTON.c: 46:         {;LED AND BUTTON.c: 47:             RD5=1;
+  1059  0716  1688               	bsf	8,5	;volatile
+  1060  0717                     l757:
+  1061                           
+  1062                           ;LED AND BUTTON.c: 49:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==7)&&(RA0==0))
+  1063  0717  1003               	clrc
+  1064  0718  1887               	btfsc	7,1	;volatile
+  1065  0719  1403               	setc
+  1066  071A  3000               	movlw	0
+  1067  071B  1803               	skipnc
+  1068  071C  3001               	movlw	1
+  1069  071D  00A0               	movwf	??_main
+  1070  071E  01A1               	clrf	??_main+1
+  1071  071F  1003               	clrc
+  1072  0720  1807               	btfsc	7,0	;volatile
+  1073  0721  1403               	setc
+  1074  0722  3000               	movlw	0
+  1075  0723  1803               	skipnc
+  1076  0724  3001               	movlw	1
+  1077  0725  0720               	addwf	??_main,w
+  1078  0726  00A2               	movwf	??_main+2
+  1079  0727  0821               	movf	??_main+1,w
+  1080  0728  1803               	skipnc
+  1081  0729  0A21               	incf	??_main+1,w
+  1082  072A  00A3               	movwf	??_main+3
+  1083  072B  1003               	clrc
+  1084  072C  1907               	btfsc	7,2	;volatile
+  1085  072D  1403               	setc
+  1086  072E  3000               	movlw	0
+  1087  072F  1803               	skipnc
+  1088  0730  3001               	movlw	1
+  1089  0731  0722               	addwf	??_main+2,w
+  1090  0732  00A4               	movwf	??_main+4
+  1091  0733  3000               	movlw	0
+  1092  0734  1803               	skipnc
+  1093  0735  3001               	movlw	1
+  1094  0736  0723               	addwf	??_main+3,w
+  1095  0737  00A5               	movwf	??_main+5
+  1096  0738  1003               	clrc
+  1097  0739  1987               	btfsc	7,3	;volatile
+  1098  073A  1403               	setc
+  1099  073B  3000               	movlw	0
+  1100  073C  1803               	skipnc
+  1101  073D  3001               	movlw	1
+  1102  073E  0724               	addwf	??_main+4,w
+  1103  073F  00A6               	movwf	??_main+6
+  1104  0740  3000               	movlw	0
+  1105  0741  1803               	skipnc
+  1106  0742  3001               	movlw	1
+  1107  0743  0725               	addwf	??_main+5,w
+  1108  0744  00A7               	movwf	??_main+7
+  1109  0745  1003               	clrc
+  1110  0746  1A07               	btfsc	7,4	;volatile
+  1111  0747  1403               	setc
+  1112  0748  3000               	movlw	0
+  1113  0749  1803               	skipnc
+  1114  074A  3001               	movlw	1
+  1115  074B  0726               	addwf	??_main+6,w
+  1116  074C  00A8               	movwf	??_main+8
+  1117  074D  3000               	movlw	0
+  1118  074E  1803               	skipnc
+  1119  074F  3001               	movlw	1
+  1120  0750  0727               	addwf	??_main+7,w
+  1121  0751  00A9               	movwf	??_main+9
+  1122  0752  1003               	clrc
+  1123  0753  1A87               	btfsc	7,5	;volatile
+  1124  0754  1403               	setc
+  1125  0755  3000               	movlw	0
+  1126  0756  1803               	skipnc
+  1127  0757  3001               	movlw	1
+  1128  0758  0728               	addwf	??_main+8,w
+  1129  0759  00AA               	movwf	??_main+10
+  1130  075A  3000               	movlw	0
+  1131  075B  1803               	skipnc
+  1132  075C  3001               	movlw	1
+  1133  075D  0729               	addwf	??_main+9,w
+  1134  075E  00AB               	movwf	??_main+11
+  1135  075F  1003               	clrc
+  1136  0760  1B07               	btfsc	7,6	;volatile
+  1137  0761  1403               	setc
+  1138  0762  3000               	movlw	0
+  1139  0763  1803               	skipnc
+  1140  0764  3001               	movlw	1
+  1141  0765  072A               	addwf	??_main+10,w
+  1142  0766  00AC               	movwf	??_main+12
+  1143  0767  3000               	movlw	0
+  1144  0768  1803               	skipnc
+  1145  0769  3001               	movlw	1
+  1146  076A  072B               	addwf	??_main+11,w
+  1147  076B  00AD               	movwf	??_main+13
+  1148  076C  1003               	clrc
+  1149  076D  1B87               	btfsc	7,7	;volatile
+  1150  076E  1403               	setc
+  1151  076F  3000               	movlw	0
+  1152  0770  1803               	skipnc
+  1153  0771  3001               	movlw	1
+  1154  0772  072C               	addwf	??_main+12,w
+  1155  0773  00AE               	movwf	??_main+14
+  1156  0774  3000               	movlw	0
+  1157  0775  1803               	skipnc
+  1158  0776  3001               	movlw	1
+  1159  0777  072D               	addwf	??_main+13,w
+  1160  0778  00AF               	movwf	??_main+15
+  1161  0779  3007               	movlw	7
+  1162  077A  062E               	xorwf	??_main+14,w
+  1163  077B  042F               	iorwf	??_main+15,w
+  1164  077C  1D03               	btfss	3,2
+  1165  077D  2F7F               	goto	u301
+  1166  077E  2F80               	goto	u300
+  1167  077F                     u301:
+  1168  077F  2F85               	goto	l763
+  1169  0780                     u300:
+  1170  0780                     l759:
+  1171  0780  1805               	btfsc	5,0	;volatile
+  1172  0781  2F83               	goto	u311
+  1173  0782  2F84               	goto	u310
+  1174  0783                     u311:
+  1175  0783  2F85               	goto	l763
+  1176  0784                     u310:
+  1177  0784                     l761:
+  1178                           
+  1179                           ;LED AND BUTTON.c: 50:         {;LED AND BUTTON.c: 51:             RD6=1;
+  1180  0784  1708               	bsf	8,6	;volatile
+  1181  0785                     l763:
+  1182                           
+  1183                           ;LED AND BUTTON.c: 53:         if((RC0+RC1+RC2+RC3+RC4+RC5+RC6+RC7==8)&&(RA0==0))
+  1184  0785  1003               	clrc
+  1185  0786  1887               	btfsc	7,1	;volatile
+  1186  0787  1403               	setc
+  1187  0788  3000               	movlw	0
+  1188  0789  1803               	skipnc
+  1189  078A  3001               	movlw	1
+  1190  078B  00A0               	movwf	??_main
+  1191  078C  01A1               	clrf	??_main+1
+  1192  078D  1003               	clrc
+  1193  078E  1807               	btfsc	7,0	;volatile
+  1194  078F  1403               	setc
+  1195  0790  3000               	movlw	0
+  1196  0791  1803               	skipnc
+  1197  0792  3001               	movlw	1
+  1198  0793  0720               	addwf	??_main,w
+  1199  0794  00A2               	movwf	??_main+2
+  1200  0795  0821               	movf	??_main+1,w
+  1201  0796  1803               	skipnc
+  1202  0797  0A21               	incf	??_main+1,w
+  1203  0798  00A3               	movwf	??_main+3
+  1204  0799  1003               	clrc
+  1205  079A  1907               	btfsc	7,2	;volatile
+  1206  079B  1403               	setc
+  1207  079C  3000               	movlw	0
+  1208  079D  1803               	skipnc
+  1209  079E  3001               	movlw	1
+  1210  079F  0722               	addwf	??_main+2,w
+  1211  07A0  00A4               	movwf	??_main+4
+  1212  07A1  3000               	movlw	0
+  1213  07A2  1803               	skipnc
+  1214  07A3  3001               	movlw	1
+  1215  07A4  0723               	addwf	??_main+3,w
+  1216  07A5  00A5               	movwf	??_main+5
+  1217  07A6  1003               	clrc
+  1218  07A7  1987               	btfsc	7,3	;volatile
+  1219  07A8  1403               	setc
+  1220  07A9  3000               	movlw	0
+  1221  07AA  1803               	skipnc
+  1222  07AB  3001               	movlw	1
+  1223  07AC  0724               	addwf	??_main+4,w
+  1224  07AD  00A6               	movwf	??_main+6
+  1225  07AE  3000               	movlw	0
+  1226  07AF  1803               	skipnc
+  1227  07B0  3001               	movlw	1
+  1228  07B1  0725               	addwf	??_main+5,w
+  1229  07B2  00A7               	movwf	??_main+7
+  1230  07B3  1003               	clrc
+  1231  07B4  1A07               	btfsc	7,4	;volatile
+  1232  07B5  1403               	setc
+  1233  07B6  3000               	movlw	0
+  1234  07B7  1803               	skipnc
+  1235  07B8  3001               	movlw	1
+  1236  07B9  0726               	addwf	??_main+6,w
+  1237  07BA  00A8               	movwf	??_main+8
+  1238  07BB  3000               	movlw	0
+  1239  07BC  1803               	skipnc
+  1240  07BD  3001               	movlw	1
+  1241  07BE  0727               	addwf	??_main+7,w
+  1242  07BF  00A9               	movwf	??_main+9
+  1243  07C0  1003               	clrc
+  1244  07C1  1A87               	btfsc	7,5	;volatile
+  1245  07C2  1403               	setc
+  1246  07C3  3000               	movlw	0
+  1247  07C4  1803               	skipnc
+  1248  07C5  3001               	movlw	1
+  1249  07C6  0728               	addwf	??_main+8,w
+  1250  07C7  00AA               	movwf	??_main+10
+  1251  07C8  3000               	movlw	0
+  1252  07C9  1803               	skipnc
+  1253  07CA  3001               	movlw	1
+  1254  07CB  0729               	addwf	??_main+9,w
+  1255  07CC  00AB               	movwf	??_main+11
+  1256  07CD  1003               	clrc
+  1257  07CE  1B07               	btfsc	7,6	;volatile
+  1258  07CF  1403               	setc
+  1259  07D0  3000               	movlw	0
+  1260  07D1  1803               	skipnc
+  1261  07D2  3001               	movlw	1
+  1262  07D3  072A               	addwf	??_main+10,w
+  1263  07D4  00AC               	movwf	??_main+12
+  1264  07D5  3000               	movlw	0
+  1265  07D6  1803               	skipnc
+  1266  07D7  3001               	movlw	1
+  1267  07D8  072B               	addwf	??_main+11,w
+  1268  07D9  00AD               	movwf	??_main+13
+  1269  07DA  1003               	clrc
+  1270  07DB  1B87               	btfsc	7,7	;volatile
+  1271  07DC  1403               	setc
+  1272  07DD  3000               	movlw	0
+  1273  07DE  1803               	skipnc
+  1274  07DF  3001               	movlw	1
+  1275  07E0  072C               	addwf	??_main+12,w
+  1276  07E1  00AE               	movwf	??_main+14
+  1277  07E2  3000               	movlw	0
+  1278  07E3  1803               	skipnc
+  1279  07E4  3001               	movlw	1
+  1280  07E5  072D               	addwf	??_main+13,w
+  1281  07E6  00AF               	movwf	??_main+15
+  1282  07E7  3008               	movlw	8
+  1283  07E8  062E               	xorwf	??_main+14,w
+  1284  07E9  042F               	iorwf	??_main+15,w
+  1285  07EA  1D03               	btfss	3,2
+  1286  07EB  2FED               	goto	u321
+  1287  07EC  2FEE               	goto	u320
+  1288  07ED                     u321:
+  1289  07ED  2FF3               	goto	l63
+  1290  07EE                     u320:
+  1291  07EE                     l765:
+  1292  07EE  1805               	btfsc	5,0	;volatile
+  1293  07EF  2FF1               	goto	u331
+  1294  07F0  2FF2               	goto	u330
+  1295  07F1                     u331:
+  1296  07F1  2FF3               	goto	l63
+  1297  07F2                     u330:
+  1298  07F2                     l767:
+  1299                           
+  1300                           ;LED AND BUTTON.c: 54:         {;LED AND BUTTON.c: 55:             RD7=1;
+  1301  07F2  1788               	bsf	8,7	;volatile
+  1302  07F3                     l63:	
+  1303                           ;LED AND BUTTON.c: 56:         }
+  1304                           
+  1305                           
+  1306                           ;LED AND BUTTON.c: 57:         if(RA0==1)
+  1307  07F3  1C05               	btfss	5,0	;volatile
+  1308  07F4  2FF6               	goto	u341
+  1309  07F5  2FF7               	goto	u340
+  1310  07F6                     u341:
+  1311  07F6  2C82               	goto	l721
+  1312  07F7                     u340:
+  1313  07F7                     l769:
+  1314                           
+  1315                           ;LED AND BUTTON.c: 58:         {;LED AND BUTTON.c: 59:             PORTD=0x00;
+  1316  07F7  0188               	clrf	8	;volatile
+  1317  07F8  2C82               	goto	l721
+  1318  07F9  120A  118A  2800   	ljmp	start
+  1319  07FC                     __end_of_main:
+  1320  007E                     btemp	set	126	;btemp
+  1321  007E                     wtemp0	set	126
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      0       0
+    BANK0            80     16      16
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                16    16      0       0
+                                              0 BANK0     16    16      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50     10      10       5       20.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Wed Mar 15 10:41:39 2023
+
+                     l63 07F3                      l721 0482                      l731 055E  
+                    l723 04EC                      l715 046A                      l741 0636  
+                    l733 055F                      l725 04F0                      l717 046E  
+                    l751 06A9                      l743 063A                      l735 05C8  
+                    l727 04F1                      l719 0471                      l761 0784  
+                    l753 0712                      l745 063B                      l737 05CC  
+                    l729 055A                      l763 0785                      l755 0716  
+                    l747 06A4                      l739 05CD                      l765 07EE  
+                    l757 0717                      l749 06A8                      l767 07F2  
+                    l759 0780                      l769 07F7                      _RA0 0028  
+                    _RC0 0038                      _RC1 0039                      _RC2 003A  
+                    _RD0 0040                      _RC3 003B                      _RD1 0041  
+                    _RC4 003C                      _RD2 0042                      _RC5 003D  
+                    _RD3 0043                      _RC6 003E                      _RD4 0044  
+                    _RC7 003F                      _RD5 0045                      _RD6 0046  
+                    _RD7 0047                      u200 055A                      u201 0559  
+                    u210 055E                      u211 055D                      u300 0780  
+                    u220 05C8                      u301 077F                      u221 05C7  
+                    u310 0784                      u230 05CC                      u311 0783  
+                    u231 05CB                      u320 07EE                      u240 0636  
+                    u321 07ED                      u241 0635                      u330 07F2  
+                    u250 063A                      u331 07F1                      u251 0639  
+                    u340 07F7                      u260 06A4                      u180 04EC  
+                    u341 07F6                      u261 06A3                      u181 04EB  
+                    u270 06A8                      u190 04F0                      u271 06A7  
+                    u191 04EF                      u280 0712                      u281 0711  
+                    u290 0716                      u291 0715                     _main 046A  
+                   btemp 007E                     start 0000                    ?_main 0000  
+                  _ANSEL 0188                    _PORTA 0005                    _PORTC 0007  
+                  _PORTD 0008                    _TRISA 0085                    _TRISC 0087  
+                  _TRISD 0088                    status 0003                    wtemp0 007E  
+        __initialization 07FC             __end_of_main 07FC                   ??_main 0020  
+                 _ANSELH 0189  __end_of__initialization 07FC           __pcstackCOMMON 0000  
+             __pmaintext 046A     end_of_initialization 07FC      start_initialization 07FC  
+              ___latbits 0002            __pcstackBANK0 0020            __size_of_main 0392  
